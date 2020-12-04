@@ -1,0 +1,10 @@
+
+<%= form_for :system, url:system_path(@system), method: :patch do |f| %>
+  <p>
+    Название <br>
+    <%=f.text_field(:name, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

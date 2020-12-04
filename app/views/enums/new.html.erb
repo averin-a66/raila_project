@@ -1,0 +1,18 @@
+
+<%= form_for :enum, url:enums_path do |f| %>
+  <p>
+    Мера <br>
+    <%=f.text_field(:name, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Кратко <br>
+    <%=f.text_field(:short, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Система <br>
+    <%= f.collection_select(:system_id,  System.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Изменение</h1>
+<h3><%= @country.country %></h3>
+
+<div class="container"></div>
+<%= link_to "Редактировать", edit_country_path(@country), :class=>'btn btn-warning' %>
+<%=link_to "Удалить", country_path(@country), method: :delete, data: {confirm: "Удалить?"}, :class=> 'btn btn-warning'%>
+</div>
+</p>

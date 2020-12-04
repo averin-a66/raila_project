@@ -1,0 +1,19 @@
+<% if @country.errors.any? %>
+  <% @country.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+  <%end %>
+<% end %>
+
+<%= form_for :country, url:countries_path do |f| %>
+  <p>
+    Страна <br>
+    <%=f.text_field(:country, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Система <br>
+    <%= f.collection_select(:system_id,  System.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

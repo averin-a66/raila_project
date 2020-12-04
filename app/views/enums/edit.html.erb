@@ -1,0 +1,22 @@
+
+<%= form_for :enum, url:enum_path(@enum), method: :patch do |f| %>
+  <p>
+    Название <br>
+    <%=f.text_field(:name, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Название <br>
+    <%=f.text_field(:short, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Название <br>
+    <%=f.text_field(:class, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    Система <br>
+    <%= f.collection_select(:system_id,  System.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

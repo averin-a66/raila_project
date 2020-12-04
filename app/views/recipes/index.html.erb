@@ -1,0 +1,5 @@
+<h1>Main page</h1>
+<% @recipe.each do |r| %>
+  <h3><% r.name %></h3>
+  <p><% r.body %></p>
+<% end %>

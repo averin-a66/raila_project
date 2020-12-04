@@ -1,0 +1,6 @@
+<h3>Меры веса</h3>
+<span class="p-2 text-dark"><%= link_to "Добавить", new_enum_path %></span>
+<% @enums.each do |r| %>
+  <p> <%= link_to r.name, enum_path(r) %></p>
+  <p><%= r.system.name %></p>
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  enum_from: one
+  enum_to: one
+  ratio: 
+
+two:
+  enum_from: two
+  enum_to: two
+  ratio: 

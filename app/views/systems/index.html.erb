@@ -1,0 +1,6 @@
+<h3>Системы единиц</h3>
+<span class="p-2 text-dark"><%= link_to "Добавить", new_system_path %></span>
+<% @systems.each do |r| %>
+  <p> <%= link_to r.name, system_path(r) %></p>
+
+<% end %>

@@ -1,0 +1,8 @@
+<h1>Изменение</h1>
+<h3><%= @enum.name %></h3>
+
+<div class="container"></div>
+<%= link_to "Редактировать", edit_enum_path(@enum), :class=>'btn btn-warning' %>
+<%=link_to "Удалить", enum_path(@enum), method: :delete, data: {confirm: "Удалить?"}, :class=> 'btn btn-warning'%>
+</div>
+</p>

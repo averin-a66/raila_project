@@ -1,0 +1,7 @@
+<h1>Изменение</h1>
+<h3><%= @system.name %></h3>
+
+
+<%= link_to "Редактировать", edit_system_path(@system), :class=>'btn btn-warning' %>
+<%=link_to "Удалить", system_path(@system), method: :delete, data: {confirm: "Удалить?"}, :class=> 'btn btn-warning'%>
+</p>
