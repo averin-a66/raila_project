@@ -17,7 +17,14 @@
         <span class="p-2 text-dark"><%= link_to "Главная", home_path %></span>
         <span class="p-2 text-dark"><%= link_to "Добавить", new_recipe_path %></span>
       </nav>
-      <span class="btn btn-outline-primary"><%= link_to "Sign up", new_recipe_path %></span>
+
+        <% if user_signed_in? %>
+    <span>Здравствуйте, <%= current_user.name %></span>
+          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+<% else %>
+    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+<% end %>
+
     </div>
     <div class="container">
       <%= yield %>

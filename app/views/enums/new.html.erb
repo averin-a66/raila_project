@@ -9,6 +9,11 @@
     <%=f.text_field(:short, {:class => 'form_control'}) %>
   </p>
   <p>
+    Чего? <br>
+    <%=f.text_field(:kind, {:class => 'form_control'}) %>
+  </p>
+
+  <p>
     Система <br>
     <%= f.collection_select(:system_id,  System.all.order(:name), :id, :name, prompt: true)%>
   </p>

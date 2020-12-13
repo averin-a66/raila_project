@@ -1,0 +1,23 @@
+<% if @enum_convert.errors.any? %>
+  <% @enum_convert.errors.full_messages.each do |msg| %>
+    <div class="alert alert-danger"><%= msg %></div>
+  <%end %>
+<% end %>
+<%= form_for :enum_convert, url:enum_converts_path do |f| %>
+  <p>
+    из <br>
+    <%= f.collection_select(:enum_from_id,  Enum.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  </p>
+  <p>
+    в <br>
+    <%= f.collection_select(:enum_to_id,  Enum.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  <p>
+    Кол-во<br>
+    <%=f.text_field(:ratio, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

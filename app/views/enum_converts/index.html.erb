@@ -1,0 +1,8 @@
+<h3>Конвертер</h3>
+<span class="p-2 text-dark"><%= link_to "Добавить", new_enum_convert_path %></span>
+<% @enum_converts.each do |r| %>
+  <p> <%= link_to r.id, enum_convert_path(r) %></p>
+  <%= r.enum_from.name %>
+  <%= r.enum_to.name %>
+  <%= r.ratio %>
+<% end %>

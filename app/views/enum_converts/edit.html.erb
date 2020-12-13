@@ -1,0 +1,19 @@
+
+<%= form_for :enum_convert, url:enum_convert_path(@enum_convert),method: :patch do |f| %>
+  <p>
+    из <br>
+    <%= f.collection_select(:enum_id,  Enum.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  </p>
+  <p>
+    в <br>
+    <%= f.collection_select(:enum_id,  Enum.all.order(:name), :id, :name, prompt: true)%>
+  </p>
+  <p>
+    Кол-во<br>
+    <%=f.text_field(:ratio, {:class => 'form_control'}) %>
+  </p>
+  <p>
+    <%= f.submit({:class=>'btn btn-success'}) %>
+  </p>
+<% end %>

@@ -1,6 +1,6 @@
 class EnumConvertsController < ApplicationController
   def index
-    @converts=EnumConvert.all
+    @enum_converts=EnumConvert.all
   end
 
   def show
@@ -19,7 +19,7 @@ class EnumConvertsController < ApplicationController
     end
   end
   private def convert_params
-    params.require(:enum_convert).permit(:enum_from, :enum_to, :ratio)
+    params.require(:enum_convert).permit(:enum_from_id, :enum_to_id, :ratio)
   end
   def edit
     @enum_convert=EnumConvert.find(params[:id])

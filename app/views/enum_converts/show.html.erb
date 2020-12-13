@@ -1,0 +1,9 @@
+<h1>Изменение</h1>
+<h3><%= @enum_convert.enum_from.name %></h3>
+<h3><%= @enum_convert.enum_to.name %></h3>
+<h3><%= @enum_convert.ratio %></h3>
+<div class="container"></div>
+<%= link_to "Редактировать", edit_enum_convert_path(@enum_convert), :class=>'btn btn-warning' %>
+<%=link_to "Удалить", enum_convert_path(@enum_convert), method: :delete, data: {confirm: "Удалить?"}, :class=> 'btn btn-warning'%>
+</div>
+</p>

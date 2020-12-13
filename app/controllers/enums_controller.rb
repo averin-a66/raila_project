@@ -22,7 +22,7 @@ class EnumsController < ApplicationController
     end
 
     private def enums_params
-      params.require(:enum).permit(:name, :short, :class, :system)
+      params.require(:enum).permit(:name, :short, :kind, :system_id)
     end
 
     def edit
