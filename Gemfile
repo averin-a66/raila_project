@@ -55,3 +55,5 @@ gem 'activeadmin'
 gem 'formtastic'
 gem "font-awesome-rails"
 gem 'telegram-bot-ruby'
+gem "rails_12factor", group: :production
+ruby "2.6.6"
