@@ -50,3 +50,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth'
+
+gem 'activeadmin'
+gem 'formtastic'
+gem "font-awesome-rails"
+gem 'telegram-bot-ruby'

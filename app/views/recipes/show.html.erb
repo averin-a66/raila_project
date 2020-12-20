@@ -1,37 +1,38 @@
-<h4>Рецепт</h4>
-<h5><%= @recipe.name %></h5>
-<p><%= @recipe.body %></p>
-<br>
-<p>
-  <%= link_to 'Редактировать', edit_recipe_path(@recipe), :class=>'btn btn-warning' %>
-  <%= link_to 'Удалить', recipe_path(@recipe), method: :delete, data: {confirm: "Удалить?"}, :class=>'btn btn-danger' %>
-  <%= link_to 'Отмена', recipes_path, :class => 'btn btn-outline-primary'  %>
-</p>
+<h2><%= @recipe.name %></h2>
+<hr>
 <h2>Ingredients</h2>
-<% @recipe.ingrs.each do |i| %>
-  <p>
-    <%
-      @s=current_user.country_id
-      @c=Country.find_by(id: @s).system_id
-      @r=User.find_by(id: @recipe.user_id).country_id
-      @rr=Country.find_by(id: @r).system_id
-      @e = i.enum.id
-      @i=Enum.find_by(system_id: @c).id
-      if (@c!=@rr)
-        @en=EnumConvert.find_by(enum_from: @e, enum_to: @i).enum_to.name
-        @amount=EnumConvert.find_by(enum_from: @e, enum_to: @i).ratio
 
-    else
-    @en=i.enum.name
-    @amount=1
-    end
-     %>
-    <%= i.name_in %>
-    <%= i.amount_in*@amount %>
-    <%= @en %>
+  <p>
+
+      <% @recipe.ingrs.each do |i| %>
+    <p>
+      <%
+        system_to_id = Country.find(current_user.country_id).system_id
+        value, enum_name, cvts  = EnumConvert.do_convert i.enum, system_to_id, i.amount_in
+      %>
+      <%= i.name_in %>
+      <%= number_with_precision(value, :precision => 1) %>
+      <%= enum_name %>
+    </p>
+  <% end %>
+
+
   </p>
-<% end %>
-<h2>Comments</h2>
+<hr>
+<p><%= @recipe.body %></p>
+
+<p>
+  <% if current_user.id==@recipe.user_id %>
+    <hr>
+    <%= link_to 'Редактировать', edit_recipe_path(@recipe), :class => "btn btn-outline-warning" %>
+
+    <%= link_to 'Удалить', recipe_path(@recipe), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger" %>
+
+    <%= link_to 'Отмена', recipes_path, :class => "btn btn-outline-secondary" %>
+  <% end %>
+</p>
+<hr>
+<h2><i class="fa fa-comments"></i>Comments</h2>
 <% @recipe.comments.each do |comment| %>
   <p>
     <strong>User:</strong>
@@ -51,6 +52,6 @@
     <%= form.text_area :body %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit :class => "btn btn-outline-success" %>
   </p>
 <% end %>

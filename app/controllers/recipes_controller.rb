@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
+
   def index
     @recipes=Recipe.all
   end
@@ -11,7 +12,7 @@ class RecipesController < ApplicationController
     @recipe=Recipe.new(rec_params);
 
     if (@recipe.save)
-    redirect_to @recipe
+    redirect_to edit_recipe_path(@recipe)
     else
         render 'new'
       end

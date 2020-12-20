@@ -12,17 +12,21 @@
   <body>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-      <h5 class="my-0 mr-md-auto font-weight-bold">Recipe_site</h5>
-      <nav class="my-2 my-md-0 mr-md-3">
-        <span class="p-2 text-dark"><%= link_to "Главная", home_path %></span>
-        <span class="p-2 text-dark"><%= link_to "Добавить", new_recipe_path %></span>
-      </nav>
+      <h2 class="my-0 mr-md-auto font-weight-bold">Recipe_site</h2>
 
+      <% if user_signed_in? %>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <span class="text-dark"><%= link_to "Главная", home_path, :class => "btn btn-outline-info"%></span>
+        <span class="text-dark"><%= link_to "Добавить", new_recipe_path, :class => "btn btn-outline-info" %></span>
+      </nav>
+<% end %>
         <% if user_signed_in? %>
     <span>Здравствуйте, <%= current_user.name %></span>
           <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
 <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 <% end %>
 
     </div>

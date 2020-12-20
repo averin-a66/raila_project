@@ -37,4 +37,5 @@ class EnumConvertsController < ApplicationController
     @enum_convert.destroy
     redirect_to enum_converts_path
   end
+
 end
