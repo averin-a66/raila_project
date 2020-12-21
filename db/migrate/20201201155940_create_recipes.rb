@@ -3,7 +3,7 @@ class CreateRecipes < ActiveRecord::Migration[6.0]
     create_table :recipes do |t|
       t.string :name
       t.text :body
-      t.string :username
+      # t.string :username
 
       t.timestamps
     end

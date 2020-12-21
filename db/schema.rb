@@ -12,13 +12,16 @@
 
 ActiveRecord::Schema.define(version: 2020_12_18_185303) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.string "author_type"
-    t.integer "author_id"
+    t.bigint "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
@@ -39,9 +42,9 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.text "body"
-    t.integer "recipe_id", null: false
+    t.bigint "recipe_id", null: false
     t.datetime "com_data"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -51,15 +54,15 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
 
   create_table "countries", force: :cascade do |t|
     t.string "country"
-    t.integer "system_id", null: false
+    t.bigint "system_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["system_id"], name: "index_countries_on_system_id"
   end
 
   create_table "enum_converts", force: :cascade do |t|
-    t.integer "enum_from_id", null: false
-    t.integer "enum_to_id", null: false
+    t.bigint "enum_from_id", null: false
+    t.bigint "enum_to_id", null: false
     t.decimal "ratio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,17 +74,17 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
     t.string "name"
     t.string "short"
     t.string "kind"
-    t.integer "system_id", null: false
+    t.bigint "system_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["system_id"], name: "index_enums_on_system_id"
   end
 
   create_table "ingrs", force: :cascade do |t|
-    t.integer "recipe_id", null: false
+    t.bigint "recipe_id", null: false
     t.string "name_in"
     t.decimal "amount_in"
-    t.integer "enum_id", null: false
+    t.bigint "enum_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["enum_id"], name: "index_ingrs_on_enum_id"
@@ -91,9 +94,9 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
   create_table "recipes", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
@@ -104,8 +107,8 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
   end
 
   create_table "user_countries", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "country_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "country_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["country_id"], name: "index_user_countries_on_country_id"
@@ -118,8 +121,10 @@ ActiveRecord::Schema.define(version: 2020_12_18_185303) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
     t.string "name", default: "", null: false
-    t.integer "country_id"
+    t.bigint "country_id"
     t.string "workgroup"
     t.index ["country_id"], name: "index_users_on_country_id"
     t.index ["email"], name: "index_users_on_email", unique: true
