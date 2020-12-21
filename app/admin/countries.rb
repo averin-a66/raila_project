@@ -1,6 +1,6 @@
 ActiveAdmin.register Country do
   index do
-    column "Страна", :country
+    column "Страна", :state
     column "Система", :system
     actions
 
@@ -10,7 +10,7 @@ ActiveAdmin.register Country do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :country, :system_id
+   permit_params :state, :system_id
   actions :all
 
   #

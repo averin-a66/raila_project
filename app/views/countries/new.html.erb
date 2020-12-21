@@ -11,7 +11,7 @@
   </p>
   <p>
     Система <br>
-    <%= f.collection_select(:system_id,  System.all.order(:name), :id, :name, prompt: true)%>
+    <%= f.collection_select(:system_id,  System.all.order(:name), :id, :state, prompt: true)%>
   </p>
   <p>
     <%= f.submit({:class=>'btn btn-success'}) %>

@@ -1,6 +1,6 @@
 <h3>Страны</h3>
 <span class="p-2 text-dark"><%= link_to "Добавить", new_country_path %></span>
 <% @countries.each do |r| %>
-  <p> <%= link_to r.country, country_path(r) %></p>
+  <p> <%= link_to r.state, country_path(r) %></p>
 <p><%= r.system.name %></p>
 <% end %>

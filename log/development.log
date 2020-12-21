@@ -22946,3 +22946,1832 @@ Migrating to ChangeAdminUsers (20201218185303)
   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
   [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-21 16:33:58 +0300
+  [1m[35m (171.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::CountriesController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms | Allocations: 501)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2020-12-21 16:34:09 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 25.2ms | Allocations: 587)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 2751.0ms | Allocations: 9198)
+Completed 200 OK in 15530ms (Views: 12942.8ms | ActiveRecord: 2284.5ms | Allocations: 157363)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2020-12-21 16:35:06 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"taNY3iDOleKT137tWFUET58dLZwUfdK5f9e6oKQL4rD9Fw52yRVVaYPrPQBKZWo5/ffx3pfai8zBC8DZiOX0UQ==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (104.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+  [1m[35m (59.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAdminUser Update (354.8ms)[0m  [1m[33mUPDATE "admin_users" SET "remember_created_at" = $1, "updated_at" = $2 WHERE "admin_users"."id" = $3[0m  [["remember_created_at", "2020-12-21 13:35:08.547144"], ["updated_at", "2020-12-21 13:35:08.547644"], ["id", 1]]
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/countries
+Completed 302 Found in 2605ms (ActiveRecord: 531.8ms | Allocations: 11599)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-21 16:35:09 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (296.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (113.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 3130.5ms | Allocations: 77806)
+Completed 200 OK in 3835ms (Views: 2731.5ms | ActiveRecord: 535.2ms | Allocations: 82491)
+
+
+Started GET "/admin/systems" for 127.0.0.1 at 2020-12-21 16:36:15 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 663.3ms | Allocations: 68086)
+Completed 200 OK in 684ms (Views: 675.8ms | ActiveRecord: 1.4ms | Allocations: 71260)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-21 16:36:19 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (56.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (37.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 452.9ms | Allocations: 72990)
+Completed 200 OK in 485ms (Views: 355.9ms | ActiveRecord: 119.6ms | Allocations: 76614)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-21 17:17:45 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (177.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (154.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (31.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 492.1ms | Allocations: 73755)
+Completed 200 OK in 891ms (Views: 308.0ms | ActiveRecord: 364.5ms | Allocations: 76183)
+
+
+Started GET "/admin/countries/new" for 127.0.0.1 at 2020-12-21 17:17:53 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 1133.3ms | Allocations: 72261)
+Completed 500 Internal Server Error in 1188ms (ActiveRecord: 1.0ms | Allocations: 78274)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/systems" for 127.0.0.1 at 2020-12-21 17:18:52 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 336.2ms | Allocations: 67977)
+Completed 200 OK in 345ms (Views: 337.1ms | ActiveRecord: 1.7ms | Allocations: 70357)
+
+
+Started GET "/admin/systems/new" for 127.0.0.1 at 2020-12-21 17:18:55 +0300
+Processing by Admin::SystemsController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 444.1ms | Allocations: 67217)
+Completed 200 OK in 499ms (Views: 489.2ms | ActiveRecord: 0.5ms | Allocations: 72300)
+
+
+Started POST "/admin/systems" for 127.0.0.1 at 2020-12-21 17:19:02 +0300
+Processing by Admin::SystemsController#create as HTML
+  Parameters: {"authenticity_token"=>"8YVInUl5qJw5goyOxTwnqEMUGkFkKeUn/n0mXXLhRNv8iKNOXZ22AnpsCubIxEDKtOiZi7i0d3qS4j7noe6XCA==", "system"=>{"name"=>"Метрическая"}, "commit"=>"Create System"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (96.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystem Create (722.7ms)[0m  [1m[32mINSERT INTO "systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Метрическая"], ["created_at", "2020-12-21 14:19:02.810153"], ["updated_at", "2020-12-21 14:19:02.810153"]]
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/systems/1
+Completed 302 Found in 974ms (ActiveRecord: 847.1ms | Allocations: 10352)
+
+
+Started GET "/admin/systems/1" for 127.0.0.1 at 2020-12-21 17:19:04 +0300
+Processing by Admin::SystemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[35m (264.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "System"], ["resource_id", 1], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "System"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 4749.1ms | Allocations: 85357)
+Completed 200 OK in 4798ms (Views: 1433.5ms | ActiveRecord: 3352.5ms | Allocations: 89502)
+
+
+Started GET "/admin/systems" for 127.0.0.1 at 2020-12-21 17:19:13 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 669.5ms | Allocations: 82140)
+Completed 200 OK in 678ms (Views: 668.8ms | ActiveRecord: 3.1ms | Allocations: 84455)
+
+
+Started GET "/admin/systems/new" for 127.0.0.1 at 2020-12-21 17:20:10 +0300
+Processing by Admin::SystemsController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 323.2ms | Allocations: 65193)
+Completed 200 OK in 332ms (Views: 324.7ms | ActiveRecord: 0.5ms | Allocations: 67350)
+
+
+Started POST "/admin/systems" for 127.0.0.1 at 2020-12-21 17:20:17 +0300
+Processing by Admin::SystemsController#create as HTML
+  Parameters: {"authenticity_token"=>"/6r49+TJ7j0yKh97Swb593lr14h+8o71ZGIkuj8dfsDypxMk8C3wo3HEmRNG/p6VjpdUQqJvHKgI/TwA7BKtEw==", "system"=>{"name"=>"Английская"}, "commit"=>"Create System"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystem Create (594.4ms)[0m  [1m[32mINSERT INTO "systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Английская"], ["created_at", "2020-12-21 14:20:18.225229"], ["updated_at", "2020-12-21 14:20:18.225229"]]
+  [1m[35m (133.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/systems/2
+Completed 302 Found in 754ms (ActiveRecord: 728.9ms | Allocations: 8089)
+
+
+Started GET "/admin/systems/2" for 127.0.0.1 at 2020-12-21 17:20:19 +0300
+Processing by Admin::SystemsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "System"], ["resource_id", 2], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "System"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 507.9ms | Allocations: 73037)
+Completed 200 OK in 518ms (Views: 507.9ms | ActiveRecord: 2.5ms | Allocations: 76260)
+
+
+Started GET "/admin/systems" for 127.0.0.1 at 2020-12-21 17:20:23 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 596.7ms | Allocations: 83298)
+Completed 200 OK in 604ms (Views: 596.3ms | ActiveRecord: 2.5ms | Allocations: 85599)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2020-12-21 17:35:21 +0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  [1m[36mSystem Load (238.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."name" ASC[0m
+  ↳ app/views/countries/new.html.erb:14
+  Rendered countries/new.html.erb within layouts/application (Duration: 738.7ms | Allocations: 1686)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1970.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 6145ms (Views: 3782.3ms | ActiveRecord: 2210.1ms | Allocations: 21346)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2020-12-21 17:37:05 +0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."name" ASC[0m
+  ↳ app/views/countries/new.html.erb:14
+  Rendered countries/new.html.erb within layouts/application (Duration: 329.8ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1106ms (Views: 1103.9ms | ActiveRecord: 0.6ms | Allocations: 18315)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2020-12-21 17:37:08 +0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."name" ASC[0m
+  ↳ app/views/countries/new.html.erb:14
+  Rendered countries/new.html.erb within layouts/application (Duration: 38.1ms | Allocations: 1227)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 496ms (Views: 493.8ms | ActiveRecord: 0.7ms | Allocations: 18372)
+
+
+Started POST "/countries" for 127.0.0.1 at 2020-12-21 17:37:41 +0300
+Processing by CountriesController#create as HTML
+  Parameters: {"authenticity_token"=>"tqjDiFgS3fDO6+O6w3Hb0Mz71Y1bx9liL3A9SoAAhWS7pShbTPbDbo0FZdLOibyyOwdWR4daSz9D7yXwUw9Wtw==", "country"=>{"country"=>"Россия", "system_id"=>"1"}, "commit"=>"Save Country"}
+  [1m[35m (109.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[36mSystem Load (1.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[36mCountry Create (1451.6ms)[0m  [1m[32mINSERT INTO "countries" ("country", "system_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["country", "Россия"], ["system_id", 1], ["created_at", "2020-12-21 14:37:44.608103"], ["updated_at", "2020-12-21 14:37:44.608103"]]
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/countries
+Completed 302 Found in 4550ms (ActiveRecord: 1580.9ms | Allocations: 8037)
+
+
+Started GET "/countries" for 127.0.0.1 at 2020-12-21 17:37:46 +0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/countries/index.html.erb:3
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/countries/index.html.erb:5
+  Rendered countries/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1693)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 251ms (Views: 245.3ms | ActiveRecord: 1.4ms | Allocations: 18911)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2020-12-21 17:37:52 +0300
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."name" ASC[0m
+  ↳ app/views/countries/new.html.erb:14
+  Rendered countries/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1228)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 190ms (Views: 187.9ms | ActiveRecord: 0.8ms | Allocations: 18303)
+
+
+Started POST "/countries" for 127.0.0.1 at 2020-12-21 17:37:58 +0300
+Processing by CountriesController#create as HTML
+  Parameters: {"authenticity_token"=>"s9VY/UoUkgnGm17T8EOVabWd1Cwzko9KpSlNxCc1rF+zL7gTxS06Ng8jTMiU6xNSg/toqzhB+DccCDUdTWYD9g==", "country"=>{"country"=>"Англия", "system_id"=>"2"}, "commit"=>"Save Country"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[36mSystem Load (0.4ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[36mCountry Create (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("country", "system_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["country", "Англия"], ["system_id", 2], ["created_at", "2020-12-21 14:37:59.394981"], ["updated_at", "2020-12-21 14:37:59.394981"]]
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/countries_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/countries
+Completed 302 Found in 17ms (ActiveRecord: 6.5ms | Allocations: 4094)
+
+
+Started GET "/countries" for 127.0.0.1 at 2020-12-21 17:37:59 +0300
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/countries/index.html.erb:3
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/countries/index.html.erb:5
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/countries/index.html.erb:5
+  Rendered countries/index.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2357)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 164.5ms | ActiveRecord: 1.5ms | Allocations: 19424)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-21 17:39:20 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (193.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (723.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.9ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1482.6ms | Allocations: 89628)
+Completed 200 OK in 1777ms (Views: 757.0ms | ActiveRecord: 921.5ms | Allocations: 91938)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-21 17:39:27 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (1.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 826.4ms | Allocations: 89451)
+Completed 200 OK in 836ms (Views: 823.7ms | ActiveRecord: 5.2ms | Allocations: 91740)
+
+
+Started GET "/" for ::1 at 2020-12-21 20:45:22 +0300
+Started GET "/admin" for ::1 at 2020-12-21 20:45:23 +0300
+Processing by Admin::DashboardController#index as HTML
+Completed 401 Unauthorized in 2652ms (ActiveRecord: 0.0ms | Allocations: 590)
+
+
+Started GET "/admin/login" for ::1 at 2020-12-21 20:45:58 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+Processing by RecipesController#index as HTML
+Completed 401 Unauthorized in 2594ms (ActiveRecord: 0.0ms | Allocations: 1376)
+
+
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 365.0ms | Allocations: 96)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 26230.1ms | Allocations: 8867)
+Completed 200 OK in 45841ms (Views: 43007.9ms | ActiveRecord: 0.0ms | Allocations: 67436)
+
+
+Started POST "/admin/login" for ::1 at 2020-12-21 20:47:36 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"InHJZzZou1X0lhY33JgqSACC6yYmpt8fXC2/qrFZAOR1hWBjt3PsQ5emimamHu+FCqFsdxxEhvSxtt1h167xEg==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (387.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 11867ms (ActiveRecord: 388.2ms | Allocations: 2896)
+
+
+Started GET "/admin" for ::1 at 2020-12-21 20:47:49 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (1.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 10285.0ms | Allocations: 61561)
+Completed 200 OK in 12699ms (Views: 11723.1ms | ActiveRecord: 1.2ms | Allocations: 63937)
+
+
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:48:18 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (1.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:48:57 +0300
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:14 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (502.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1457.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (102.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:31 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (134.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 42212.6ms | Allocations: 129110)
+Completed 200 OK in 75094ms (Views: 45446.5ms | ActiveRecord: 1565.2ms | Allocations: 132674)
+
+
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 16982.8ms | Allocations: 128544)
+Completed 200 OK in 21565ms (Views: 17059.4ms | ActiveRecord: 509.5ms | Allocations: 152475)
+
+
+Started GET "/admin/countries" for ::1 at 2020-12-21 20:49:36 +0300
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 3011.0ms | Allocations: 141912)
+Completed 200 OK in 3682ms (Views: 3066.9ms | ActiveRecord: 312.9ms | Allocations: 145733)
+
+
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/countries" for ::1 at 2020-12-21 20:49:38 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1462.3ms | Allocations: 84501)
+Completed 200 OK in 1564ms (Views: 1464.2ms | ActiveRecord: 3.4ms | Allocations: 86796)
+
+
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:39 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (2.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (120.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Started GET "/admin/countries" for ::1 at 2020-12-21 20:49:40 +0300
+  [1m[36mCountry Load (5.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.1ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (8.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 2025.9ms | Allocations: 127682)
+Completed 200 OK in 2119ms (Views: 1918.4ms | ActiveRecord: 139.7ms | Allocations: 130034)
+
+
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (1.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.4ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1626.0ms | Allocations: 149091)
+Completed 200 OK in 1657ms (Views: 1621.8ms | ActiveRecord: 9.4ms | Allocations: 151518)
+
+
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:41 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.1ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 691.0ms | Allocations: 84698)
+Completed 200 OK in 699ms (Views: 688.2ms | ActiveRecord: 5.6ms | Allocations: 86984)
+
+
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/enum_converts" for ::1 at 2020-12-21 20:49:42 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (1.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (2.9ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1047.2ms | Allocations: 98239)
+Completed 200 OK in 1074ms (Views: 1038.4ms | ActiveRecord: 11.2ms | Allocations: 100528)
+
+
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:43 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1236.6ms | Allocations: 140113)
+Completed 200 OK in 1245ms (Views: 1234.6ms | ActiveRecord: 4.3ms | Allocations: 142440)
+
+
+Processing by Admin::EnumConvertsController#index as HTML
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:44 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:44 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.9ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 541.1ms | Allocations: 84477)
+Completed 200 OK in 550ms (Views: 541.0ms | ActiveRecord: 3.3ms | Allocations: 86762)
+
+
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:45 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mSystem Load (2.2ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mAdminUser Load (1.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 743.8ms | Allocations: 86234)
+Completed 200 OK in 757ms (Views: 744.6ms | ActiveRecord: 5.6ms | Allocations: 90262)
+
+
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+Started GET "/admin/systems" for ::1 at 2020-12-21 20:49:46 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.4ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+Processing by Admin::SystemsController#index as HTML
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 589.2ms | Allocations: 86038)
+Completed 200 OK in 621ms (Views: 592.1ms | ActiveRecord: 4.8ms | Allocations: 101124)
+
+
+  [1m[36mAdminUser Load (12.2ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 737.8ms | Allocations: 94659)
+Completed 200 OK in 764ms (Views: 737.8ms | ActiveRecord: 15.1ms | Allocations: 101856)
+
+
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (189.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enum_converts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 487.1ms | Allocations: 118666)
+Completed 200 OK in 499ms (Views: 487.4ms | ActiveRecord: 4.5ms | Allocations: 121057)
+
+
+  [1m[36mEnum Load (183.4ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1176.2ms | Allocations: 215015)
+Completed 200 OK in 4290ms (Views: 900.6ms | ActiveRecord: 2780.1ms | Allocations: 520080)
+
+
+Started GET "/admin/systems/new" for ::1 at 2020-12-21 20:49:53 +0300
+Processing by Admin::SystemsController#new as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 410.4ms | Allocations: 65173)
+Completed 200 OK in 522ms (Views: 452.3ms | ActiveRecord: 1.0ms | Allocations: 67295)
+
+
+Started POST "/admin/systems" for ::1 at 2020-12-21 20:50:00 +0300
+Processing by Admin::SystemsController#create as HTML
+  Parameters: {"authenticity_token"=>"xY0rJtJrgnSNCl8sQmfNpll7xJkfGLbEr01bsqQjG8BqH1Va83HraaC70luZCFR4UmRsB1dtK1Chsc2qHF2pjw==", "system"=>{"name"=>"Общее"}, "commit"=>"Create System"}
+  [1m[36mAdminUser Load (1.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (10.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystem Create (184.8ms)[0m  [1m[32mINSERT INTO "systems" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Общее"], ["created_at", "2020-12-21 17:50:01.699128"], ["updated_at", "2020-12-21 17:50:01.699128"]]
+  [1m[35m (38.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/systems/3
+Completed 302 Found in 880ms (ActiveRecord: 235.0ms | Allocations: 8127)
+
+
+Started GET "/admin/systems/3" for ::1 at 2020-12-21 20:50:02 +0300
+Processing by Admin::SystemsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[35m (69.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "System"], ["resource_id", 3], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "System"], ["resource_id", 3], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 707.9ms | Allocations: 73062)
+Completed 200 OK in 749ms (Views: 638.5ms | ActiveRecord: 71.9ms | Allocations: 76255)
+
+
+Started GET "/admin/countries" for ::1 at 2020-12-21 20:50:06 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 357.3ms | Allocations: 89463)
+Completed 200 OK in 365ms (Views: 354.5ms | ActiveRecord: 5.0ms | Allocations: 91751)
+
+
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 20:50:12 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 672.2ms | Allocations: 67217)
+Completed 500 Internal Server Error in 823ms (ActiveRecord: 0.9ms | Allocations: 69309)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 20:50:18 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 511.7ms | Allocations: 73216)
+Completed 500 Internal Server Error in 519ms (ActiveRecord: 1.1ms | Allocations: 75304)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 20:50:39 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 410.8ms | Allocations: 67214)
+Completed 500 Internal Server Error in 419ms (ActiveRecord: 1.1ms | Allocations: 69297)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (43.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5168794849566389475)[0m
+  [1m[35m (133.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeCountries (20201221180326)
+  [1m[35m (13.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (443.4ms)[0m  [1m[35mALTER TABLE "countries" RENAME COLUMN "country" TO "state"[0m
+  [1m[36mprimary::SchemaMigration Create (99.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201221180326"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (86.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(5168794849566389475)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 21:08:55 +0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (57.1ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (52.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 1686.6ms | Allocations: 71328)
+Completed 500 Internal Server Error in 2345ms (ActiveRecord: 109.6ms | Allocations: 85278)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 21:09:16 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 262.6ms | Allocations: 67213)
+Completed 500 Internal Server Error in 268ms (ActiveRecord: 1.0ms | Allocations: 69296)
+
+
+  
+ActionView::Template::Error (To use the :country input, please install a country_select plugin, like this one: https://github.com/stefanpenner/country_select):
+    1: insert_tag renderer_for(:new)
+  
+formtastic (3.1.5) lib/formtastic/inputs/country_input.rb:73:in `to_html'
+formtastic (3.1.5) lib/formtastic/helpers/input_helper.rb:242:in `input'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:330:in `block in fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `collect'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:318:in `fieldset_contents_from_column_list'
+formtastic (3.1.5) lib/formtastic/helpers/inputs_helper.rb:297:in `inputs'
+arbre (1.4.0) lib/arbre/rails/forms.rb:30:in `proxy_call_to_form'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:66:in `inputs'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:45:in `block in default_form_config'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `instance_eval'
+activeadmin (2.9.0) lib/active_admin/views/components/active_admin_form.rb:35:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:28:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `active_admin_form_for'
+activeadmin (2.9.0) lib/active_admin/views/pages/form.rb:25:in `main_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:101:in `block (2 levels) in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:100:in `block in build_main_content_wrapper'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:99:in `build_main_content_wrapper'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:83:in `block in build_page_content'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:82:in `build_page_content'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:59:in `block (2 levels) in build_page'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:31:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:14:in `div'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:55:in `block in build_page'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:49:in `with_current_arbre_element'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:54:in `build_page'
+activeadmin (2.9.0) lib/active_admin/views/pages/base.rb:9:in `build'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:30:in `block in build_tag'
+arbre (1.4.0) lib/arbre/context.rb:93:in `with_current_arbre_element'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:26:in `build_tag'
+arbre (1.4.0) lib/arbre/element/builder_methods.rb:39:in `insert_tag'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:2
+arbre (1.4.0) lib/arbre/context.rb:46:in `instance_eval'
+arbre (1.4.0) lib/arbre/context.rb:46:in `initialize'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1:in `new'
+activeadmin (2.9.0) app/views/active_admin/resource/new.html.arb:1
+actionview (6.0.3.4) lib/action_view/base.rb:274:in `_run'
+actionview (6.0.3.4) lib/action_view/template.rb:185:in `block in render'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:182:in `instrument'
+actionview (6.0.3.4) lib/action_view/template.rb:385:in `instrument_render_template'
+actionview (6.0.3.4) lib/action_view/template.rb:183:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:58:in `block (2 levels) in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:88:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/abstract_renderer.rb:87:in `instrument'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:57:in `block in render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:65:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+C:/Ruby26-x64/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+responders (3.0.1) lib/action_controller/responder.rb:240:in `default_render'
+responders (3.0.1) lib/action_controller/responder.rb:172:in `to_html'
+responders (3.0.1) lib/responders/flash_responder.rb:109:in `to_html'
+responders (3.0.1) lib/action_controller/responder.rb:165:in `respond'
+responders (3.0.1) lib/action_controller/responder.rb:158:in `call'
+responders (3.0.1) lib/action_controller/respond_with.rb:213:in `respond_with'
+inherited_resources (1.12.0) lib/inherited_resources/actions.rb:19:in `new'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin" for ::1 at 2020-12-21 21:09:59 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 523.0ms | Allocations: 61458)
+Completed 200 OK in 535ms (Views: 529.4ms | ActiveRecord: 0.5ms | Allocations: 63853)
+
+
+Started GET "/admin/countries" for ::1 at 2020-12-21 21:10:29 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (147.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (1.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 513.7ms | Allocations: 77574)
+Completed 500 Internal Server Error in 535ms (ActiveRecord: 149.9ms | Allocations: 80960)
+
+
+  
+ActionView::Template::Error (missing attribute: country):
+    1: insert_tag renderer_for(:index)
+  
+app/admin/countries.rb:3:in `block (2 levels) in <main>'
+Started GET "/admin/countries" for ::1 at 2020-12-21 21:11:03 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 242.1ms | Allocations: 75158)
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 2.4ms | Allocations: 77412)
+
+
+  
+ActionView::Template::Error (missing attribute: country):
+    1: insert_tag renderer_for(:index)
+  
+app/admin/countries.rb:3:in `block (2 levels) in <main>'
+Started GET "/admin" for ::1 at 2020-12-21 21:11:26 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.7ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 889.7ms | Allocations: 61452)
+Completed 200 OK in 901ms (Views: 895.2ms | ActiveRecord: 0.7ms | Allocations: 63408)
+
+
+Started GET "/admin/countries" for ::1 at 2020-12-21 21:11:35 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 422.5ms | Allocations: 75137)
+Completed 500 Internal Server Error in 432ms (ActiveRecord: 3.2ms | Allocations: 77406)
+
+
+  
+ActionView::Template::Error (missing attribute: country):
+    1: insert_tag renderer_for(:index)
+  
+app/admin/countries.rb:3:in `block (2 levels) in <main>'
+Started GET "/admin/countries" for ::1 at 2020-12-21 21:11:53 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.4ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 670.4ms | Allocations: 99593)
+Completed 200 OK in 761ms (Views: 660.1ms | ActiveRecord: 31.7ms | Allocations: 110543)
+
+
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 21:12:00 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (1.2ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 336.1ms | Allocations: 69707)
+Completed 200 OK in 361ms (Views: 353.4ms | ActiveRecord: 1.6ms | Allocations: 72627)
+
+
+Started GET "/admin/systems" for ::1 at 2020-12-21 21:12:33 +0300
+Processing by Admin::SystemsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "systems"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "systems" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" ORDER BY "systems"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1148.5ms | Allocations: 85357)
+Completed 200 OK in 1165ms (Views: 1156.1ms | ActiveRecord: 3.6ms | Allocations: 88456)
+
+
