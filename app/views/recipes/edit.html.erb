@@ -20,7 +20,7 @@
       system_id=Country.find(current_user.country_id).system_id
 
     %>
-    <%= form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 10), :id, :short, prompt: false) %>
+    <%= form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :short, prompt: false) %>
   </p>
   <p>
     <%= form.submit("Добавить")%>

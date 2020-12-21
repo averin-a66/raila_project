@@ -24775,3 +24775,414 @@ Processing by Admin::SystemsController#index as HTML
 Completed 200 OK in 1165ms (Views: 1156.1ms | ActiveRecord: 3.6ms | Allocations: 88456)
 
 
+Started GET "/admin/countries" for ::1 at 2020-12-21 21:21:55 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (199.1ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (211.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (44.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 916.1ms | Allocations: 89483)
+Completed 200 OK in 1348ms (Views: 658.6ms | ActiveRecord: 459.1ms | Allocations: 91880)
+
+
+Started GET "/admin/countries/new" for ::1 at 2020-12-21 21:23:29 +0300
+Processing by Admin::CountriesController#new as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 3097.7ms | Allocations: 69229)
+Completed 200 OK in 3105ms (Views: 3098.2ms | ActiveRecord: 1.2ms | Allocations: 71333)
+
+
+Started GET "/" for ::1 at 2020-12-21 21:31:50 +0300
+Processing by RecipesController#index as HTML
+Completed 401 Unauthorized in 47ms (ActiveRecord: 0.0ms | Allocations: 351)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-21 21:31:55 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 17.7ms | Allocations: 608)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 233.5ms | Allocations: 2437)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2462ms (Views: 1095.1ms | ActiveRecord: 1302.8ms | Allocations: 29414)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-12-21 21:32:03 +0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 203)
+  [1m[36mCountry Load (1159.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "country" ASC[0m
+  ↳ app/views/devise/registrations/new.html.erb:30
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 1225.4ms | Allocations: 4310)
+Completed 500 Internal Server Error in 1272ms (ActiveRecord: 1159.7ms | Allocations: 7021)
+
+
+  
+ActionView::Template::Error (PG::UndefinedColumn: ОШИБКА:  столбец "country" не существует
+LINE 1: SELECT "countries".* FROM "countries" ORDER BY "country" ASC
+                                                       ^
+):
+    27: </div>
+    28:   <div class="field">
+    29:     <%= f.label :country %><br>
+    30:     <%= f.collection_select(:country_id,  Country.all.order(:country), :id, :state, prompt: true) %>
+    31: 
+    32:   </div>
+    33:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:30
+app/views/devise/registrations/new.html.erb:3
+Started GET "/users/sign_up" for ::1 at 2020-12-21 21:32:56 +0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 195)
+  [1m[36mCountry Load (24.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."state" ASC[0m
+  ↳ app/views/devise/registrations/new.html.erb:30
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 508)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 46.1ms | Allocations: 3652)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 475ms (Views: 449.1ms | ActiveRecord: 24.8ms | Allocations: 24043)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-21 21:33:02 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1366)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 395ms (Views: 393.4ms | ActiveRecord: 0.0ms | Allocations: 19527)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-12-21 21:33:12 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"0V/bjWTOtAc1nKN6EQXnRFvUG8lS5pnKXtxUcKelO1Vm+F4ZjXlVks7ZQBU4gFY6bwfau+db9TPpZ3l9JJC02A==", "user"=>{"email"=>"veraverous@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (64.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "veraverous@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 83ms (ActiveRecord: 64.7ms | Allocations: 2052)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"0V/bjWTOtAc1nKN6EQXnRFvUG8lS5pnKXtxUcKelO1Vm+F4ZjXlVks7ZQBU4gFY6bwfau+db9TPpZ3l9JJC02A==", "user"=>{"email"=>"veraverous@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1069)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 702ms (Views: 198.8ms | ActiveRecord: 0.0ms | Allocations: 18268)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-12-21 21:33:18 +0300
+Processing by Users::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 15)
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."state" ASC[0m
+  ↳ app/views/devise/registrations/new.html.erb:30
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 275ms (Views: 271.5ms | ActiveRecord: 0.9ms | Allocations: 19619)
+
+
+Started POST "/users" for ::1 at 2020-12-21 21:33:36 +0300
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"gs3bDHz7d2mVAxIp4lF2LqBzqZdEZoCJExri+DcYroy5xHxQiX4fNYWKuXyt6B3z/CmwWGx/qDQs9fiSdDAwJg==", "user"=>{"email"=>"veraverous@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "name"=>"Vera", "country_id"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (16.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "veraverous@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (638.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name", "country_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "veraverous@gmail.com"], ["encrypted_password", "$2a$12$fALFkbyPJz9Cbh58CSocS.vWhgn8qWer6fYaYnsSjX1zPnaUgcpNm"], ["created_at", "2020-12-21 18:33:37.521295"], ["updated_at", "2020-12-21 18:33:37.521295"], ["name", "Vera"], ["country_id", 1]]
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1255ms (ActiveRecord: 675.3ms | Allocations: 9755)
+
+
+Started GET "/" for ::1 at 2020-12-21 21:33:38 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (46.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:2
+  Rendered recipes/index.html.erb within layouts/application (Duration: 93.1ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 385ms (Views: 328.5ms | ActiveRecord: 48.7ms | Allocations: 20647)
+
+
+Started GET "/recipes/new" for ::1 at 2020-12-21 21:33:42 +0300
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/new.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 10.7ms | Allocations: 398)
+  Rendered recipes/new.html.erb within layouts/application (Duration: 25.4ms | Allocations: 1011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 280ms (Views: 231.4ms | ActiveRecord: 3.0ms | Allocations: 23321)
+
+
+Started POST "/recipes" for ::1 at 2020-12-21 21:33:59 +0300
+Processing by RecipesController#create as HTML
+  Parameters: {"authenticity_token"=>"huaBmym0UPXVLTbUSMd5x98/DdWIM/JoVMWY6x5+ahMlhMCLjKpmS2HGthiXvX0oLCwi+s7oGpO6Seyp9y9FUQ==", "recipe"=>{"user_id"=>"1", "name"=>"Рецепт 1", "body"=>"Первый"}, "commit"=>"Добавить ингредиент"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[36mRecipe Create (161.2ms)[0m  [1m[32mINSERT INTO "recipes" ("name", "body", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Рецепт 1"], ["body", "Первый"], ["created_at", "2020-12-21 18:34:00.416702"], ["updated_at", "2020-12-21 18:34:00.416702"], ["user_id", 1]]
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:14:in `create'
+Redirected to http://localhost:3000/recipes/1/edit
+Completed 302 Found in 201ms (ActiveRecord: 179.8ms | Allocations: 6618)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:34:00 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 0.4ms | Allocations: 178)
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (13.7ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=10)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 500.4ms | Allocations: 13699)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 707ms (Views: 629.8ms | ActiveRecord: 64.1ms | Allocations: 32953)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:35:39 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 1.7ms | Allocations: 384)
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (0.7ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=3)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 42.3ms | Allocations: 3449)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 629ms (Views: 615.8ms | ActiveRecord: 2.5ms | Allocations: 24002)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:35:45 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 0.5ms | Allocations: 178)
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=3)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 12.1ms | Allocations: 2695)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 288ms (Views: 279.6ms | ActiveRecord: 2.7ms | Allocations: 21862)
+
+
+Started GET "/admin/enums" for ::1 at 2020-12-21 21:35:53 +0300
+Processing by Admin::EnumsController#index as HTML
+  [1m[36mAdminUser Load (2.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enums" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (5.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 419.7ms | Allocations: 72441)
+Completed 200 OK in 460ms (Views: 433.1ms | ActiveRecord: 12.4ms | Allocations: 75863)
+
+
+Started GET "/admin/enums/new" for ::1 at 2020-12-21 21:35:57 +0300
+Processing by Admin::EnumsController#new as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  ↳ app/admin/enums.rb:29:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/new.html.arb (Duration: 378.2ms | Allocations: 70545)
+Completed 200 OK in 429ms (Views: 397.4ms | ActiveRecord: 1.1ms | Allocations: 77758)
+
+
+Started POST "/admin/enums" for ::1 at 2020-12-21 21:36:07 +0300
+Processing by Admin::EnumsController#create as HTML
+  Parameters: {"authenticity_token"=>"WzKk6L1zA3HiI/yzFltu+vnAKPjwDT628temWKiSqYz0oNqUnGlqbM+SccTNNPck8t+AZrh4oyL8KzBAEOwbww==", "enum"=>{"name"=>"грамм", "short"=>"г.", "kind"=>"", "system_id"=>"1"}, "commit"=>"Create Enum"}
+  [1m[36mAdminUser Load (1.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSystem Load (0.4ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnum Create (112.8ms)[0m  [1m[32mINSERT INTO "enums" ("name", "short", "kind", "system_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "грамм"], ["short", "г."], ["kind", ""], ["system_id", 1], ["created_at", "2020-12-21 18:36:07.668361"], ["updated_at", "2020-12-21 18:36:07.668361"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/admin/enums/1
+Completed 302 Found in 206ms (ActiveRecord: 115.5ms | Allocations: 13049)
+
+
+Started GET "/admin/enums/1" for ::1 at 2020-12-21 21:36:08 +0300
+Processing by Admin::EnumsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnum Load (0.4ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mSystem Load (0.6ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (269.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "Enum"], ["resource_id", 1], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "Enum"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 625.9ms | Allocations: 77564)
+Completed 200 OK in 651ms (Views: 371.5ms | ActiveRecord: 271.3ms | Allocations: 81678)
+
+
+Started GET "/admin/enums" for ::1 at 2020-12-21 21:36:12 +0300
+Processing by Admin::EnumsController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enums" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enums" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "enums"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enums" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mEnum Load (0.7ms)[0m  [1m[34mSELECT "enums".* FROM "enums" ORDER BY "enums"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (1.1ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/enums.rb:6:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 389.5ms | Allocations: 85581)
+Completed 200 OK in 395ms (Views: 385.9ms | ActiveRecord: 5.1ms | Allocations: 87874)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:36:16 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 1.7ms | Allocations: 178)
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (0.7ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=3)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 39.8ms | Allocations: 2751)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 252ms (Views: 240.9ms | ActiveRecord: 3.2ms | Allocations: 21823)
+
+
+Started POST "/recipes/1/ingrs" for ::1 at 2020-12-21 21:36:34 +0300
+Processing by IngrsController#create as JS
+  Parameters: {"authenticity_token"=>"g4gXHxKW3T+KjCfZPn777p7tnnwCxmF3oHFgZTfhuQ8sGmljM4y0Iqc9qq7lEWIwlfI24kqz/OOujfZ9j58LQA==", "ingr"=>{"name_in"=>"Морковь", "amount_in"=>"100", "enum_id"=>"1"}, "commit"=>"Добавить", "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ingrs_controller.rb:4:in `create'
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[36mEnum Load (1.4ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[36mIngr Create (92.6ms)[0m  [1m[32mINSERT INTO "ingrs" ("recipe_id", "name_in", "amount_in", "enum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipe_id", 1], ["name_in", "Морковь"], ["amount_in", "100.0"], ["enum_id", 1], ["created_at", "2020-12-21 18:36:35.528899"], ["updated_at", "2020-12-21 18:36:35.528899"]]
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+Redirected to http://localhost:3000/recipes/1/edit
+Completed 200 OK in 177ms (ActiveRecord: 96.7ms | Allocations: 6243)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:36:35 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 0.4ms | Allocations: 178)
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=3)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2739)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 248ms (Views: 239.8ms | ActiveRecord: 2.1ms | Allocations: 21822)
+
+
+Started POST "/recipes/1/ingrs" for ::1 at 2020-12-21 21:36:47 +0300
+Processing by IngrsController#create as JS
+  Parameters: {"authenticity_token"=>"VXzYhO2fo9unZy/64QjiqKdOSDd8Tv1odHIoMht5UGy7qn9DrAinXOV12U5OAWeKemE5BJBa5iA6X8U6OkckzA==", "ingr"=>{"name_in"=>"Лук", "amount_in"=>"100", "enum_id"=>"1"}, "commit"=>"Добавить", "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ingrs_controller.rb:4:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[36mIngr Create (1.0ms)[0m  [1m[32mINSERT INTO "ingrs" ("recipe_id", "name_in", "amount_in", "enum_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipe_id", 1], ["name_in", "Лук"], ["amount_in", "100.0"], ["enum_id", 1], ["created_at", "2020-12-21 18:36:47.969479"], ["updated_at", "2020-12-21 18:36:47.969479"]]
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/ingrs_controller.rb:5:in `create'
+Redirected to http://localhost:3000/recipes/1/edit
+Completed 200 OK in 20ms (ActiveRecord: 4.9ms | Allocations: 5436)
+
+
+Started GET "/recipes/1/edit" for ::1 at 2020-12-21 21:36:48 +0300
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:35:in `edit'
+  Rendering recipes/edit.html.erb within layouts/application
+  Rendered recipes/_edit_new.html.erb (Duration: 0.4ms | Allocations: 178)
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/edit.html.erb:20
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE (system_id = 1 or system_id=3)[0m
+  ↳ app/views/recipes/edit.html.erb:23
+  Rendered recipes/edit.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2739)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 197ms (Views: 189.0ms | ActiveRecord: 1.8ms | Allocations: 21807)
+
+
+Started PATCH "/recipes/1" for ::1 at 2020-12-21 21:36:51 +0300
+Processing by RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"sgDWnjQXHZEj07pVlYSej23wwZwP5lSxJAa9ACd3TsTdph868Y1dD/LTWK8LbRLoHLSA6GGek8eKtVYLECH3PQ==", "recipe"=>{"user_id"=>"1", "name"=>"Рецепт 1", "body"=>"Первый"}, "commit"=>"Запомнить", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:39:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recipes_controller.rb:40:in `update'
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:40:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recipes_controller.rb:40:in `update'
+Redirected to http://localhost:3000/recipes/1
+Completed 302 Found in 150ms (ActiveRecord: 3.5ms | Allocations: 5525)
+
+
+Started GET "/recipes/1" for ::1 at 2020-12-21 21:36:52 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:28:in `show'
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.erb:7
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:10
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:11
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:10
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.erb:11
+  [1m[36mComment Load (100.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.erb:36
+  Rendered recipes/show.html.erb within layouts/application (Duration: 727.4ms | Allocations: 13466)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 960ms (Views: 813.6ms | ActiveRecord: 110.8ms | Allocations: 32581)
+
+
+Started GET "/" for ::1 at 2020-12-21 21:37:03 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.erb:2
+  Rendered recipes/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 843)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 266ms (Views: 256.9ms | ActiveRecord: 1.0ms | Allocations: 19472)
+
+
