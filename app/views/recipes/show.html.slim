@@ -1,0 +1,43 @@
+h2
+  = @recipe.name
+hr
+h2 Ingredients
+table
+  - @recipe.ingrs.each do |i|
+    p
+       - system_to_id = Country.find(current_user.country_id).system_id
+       - value, enum_name, cvts  = EnumConvert.do_convert i.enum, system_to_id, i.amount_in
+    tr
+      th = i.name_in
+      th = number_with_precision(value, :precision => 1)
+      th = enum_name
+hr
+p = @recipe.body
+p
+  - if current_user.id==@recipe.user_id
+    hr
+     = link_to 'Редактировать', edit_recipe_path(@recipe), :class => "btn btn-outline-warning"
+     = link_to 'Удалить', recipe_path(@recipe), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
+     = link_to 'Отмена', recipes_path, :class => "btn btn-outline-secondary"
+hr
+
+h2
+    i class="fa fa-comments" Comments
+
+- @recipe.comments.each do |comment|
+  p
+    strong  User:
+    = comment.user.email
+  p
+    strong Comment:
+    = comment.body
+
+h2 Add a comment:
+= form_with model: [ @recipe, @recipe.comments.build ] do |form|
+  = form.hidden_field :user_id, :value=>current_user.id
+  p
+    br
+      = form.label :body
+    = form.text_area :body
+  p
+    = form.submit :class => "btn btn-outline-success"

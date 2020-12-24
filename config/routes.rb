@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :countries
   resources :enums
   resources :enum_converts
-
+  get 'about'=> 'pages#about'
+  get 'contacts'=> 'pages#contacts'
   # resources :users
 end

@@ -1,0 +1,7 @@
+h3 Добавить рецепт
+= form_for( :recipe, url: recipes_path) do |f|
+  - @f=f
+  = render 'edit_new'
+  h2 Add a ingredient:
+  = @f.submit("Добавить ингредиент")
+  p = f.submit('Запомнить', {:class => 'btn btn-outline-success'})

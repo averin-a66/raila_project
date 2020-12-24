@@ -1,4 +1,7 @@
 class EnumConvert < ApplicationRecord
+  validates :enum_from_id, presence: true
+  validates :enum_to_id, presence: true
+  validates :ratio, presence:true
   belongs_to :enum_from, class_name: "Enum"
   belongs_to :enum_to, class_name: "Enum"
   def self.do_convert(enum_from, enum_system_to_id, value)

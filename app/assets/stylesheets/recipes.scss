@@ -1,3 +1,54 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+table {
+  border-collapse: collapse;
+  line-height: 1.1;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  width: 50%;
+  color: #0C213B;
+}
+th {
+  padding: 10px;
+  border: 1px solid #A9E2CC;
+}
+td {
+  font-size: 0.8em;
+  padding: 5px 7px;
+  border: 1px solid #A9E2CC;
+}
+h2 {
+  font-size: 25px;
+  font-weight: bold;
+  font-style : italic;
+
+}
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #064579;
+  display: block;
+  border: 1px solid #191970;
+}
+
+.sidenav a:hover {
+  color: #191970;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  //font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+
+}

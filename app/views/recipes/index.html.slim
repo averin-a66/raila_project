@@ -1,0 +1,10 @@
+
+div class="sidenav"
+  = link_to "About", about_path
+  = link_to "Contacts", contacts_path
+
+div class="main"
+  h2 Main page
+  - @recipes.each do |r|
+   h3
+    i class="fa fa-flask" = link_to r.name, recipe_path(r)

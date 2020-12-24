@@ -10,20 +10,49 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver2012">
+    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver1244">
+      <change afterPath="$PROJECT_DIR$/app/views/recipes/_edit_new.html.slim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/recipes/index.html.slim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/recipes/new.html.slim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/recipes/show.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hello.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hello.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/countries/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/countries/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/countries/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/countries/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/countries/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/countries/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/countries/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/countries/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/edit.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ingrs_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ingrs_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/comment.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/comment.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/country.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/country.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/enum.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/enum.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/enum_convert.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/enum_convert.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ingr.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ingr.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/system.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/system.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/start_bot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/start_bot.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/_edit_new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/edit.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/edit_new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/about.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/index.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/new.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/show.html.erb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/routes.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/routes.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/packs/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/packs/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/models/comment_test.rb" beforeDir="false" afterPath="$PROJECT_DIR$/test/models/comment_test.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/1f6134a684ff7f" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/1f6134a684ff7f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/30/e14d8cd7fb299a" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/30/e14d8cd7fb299a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5f/59cd1096661781" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/5f/59cd1096661781" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/83/7ac39cbe29ad96" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/83/7ac39cbe29ad96" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/415807e33a2d8b" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a5/415807e33a2d8b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a8/0fbf6ed4d4dfce" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/a8/0fbf6ed4d4dfce" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/bc/ebcabcf48787f7" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/bc/ebcabcf48787f7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f5/68750fff4dbe7f" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/f5/68750fff4dbe7f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +96,6 @@
       <command value="rails g model User login:string password:string email:string name:string surname:string role:numeric country:references " />
       <command value="rails g migration" />
       <command value="rails g generator" />
-      <command value="rails g controller systems" />
       <command value="rails g controller enum_converts" />
       <command value="rails g migration drop_users" />
       <command value="rails generate devise User" />
@@ -100,9 +128,14 @@
       <command value="rails g start_bot.rb" />
       <command value="bundle install" />
       <command value="rails g migration change_countries" />
+      <command value="rails test test/models/comment_test.rb:4" />
+      <command value="rails g migration create_subscribers" />
+      <command value="rails generate job notify_subscribers" />
+      <command value="rails g controller systems" />
+      <command value="rails g controller pages" />
     </option>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate (2)">
+  <component name="RunManager" selected="Rake.db:migrate (4)">
     <configuration name="Development: hello" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="hello" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -181,6 +214,25 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
+    <configuration name="db:migrate (3)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+      <module name="hello" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
+      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
+      <method v="2" />
+    </configuration>
     <configuration name="db:migrate (4)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="hello" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
@@ -201,25 +253,6 @@
       <method v="2" />
     </configuration>
     <configuration name="db:migrate (5)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
-      <module name="hello" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" track_test_folders="true" runner="rcov" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_NAME" VALUE="db:migrate" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ARGS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_ATTACHED_TEST_FRAMEWORKS" VALUE="" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TRACE" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_DRYRUN" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_PREREQS" VALUE="false" />
-      <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="hello" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
@@ -281,11 +314,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Rake.db:migrate (4)" />
+        <item itemvalue="Rake.db:migrate (3)" />
         <item itemvalue="Rake.db:migrate (2)" />
         <item itemvalue="Rake.db:migrate (5)" />
         <item itemvalue="Rake.db:migrate (1)" />
-        <item itemvalue="Rake.db:migrate" />
-        <item itemvalue="Rake.db:migrate (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +334,9 @@
       <workItem from="1606481558984" duration="1082000" />
       <workItem from="1606809547163" duration="37841000" />
       <workItem from="1607624512048" duration="51130000" />
-      <workItem from="1608303127243" duration="45921000" />
+      <workItem from="1608303127243" duration="52097000" />
+      <workItem from="1608629474760" duration="9622000" />
+      <workItem from="1608722004045" duration="5991000" />
     </task>
     <task id="LOCAL-00001" summary="before Users">
       <created>1607104108162</created>
@@ -317,7 +352,28 @@
       <option name="project" value="LOCAL" />
       <updated>1608496290967</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Ver2112">
+      <created>1608574437184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608574437184</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Ver1244">
+      <created>1608575109977</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1608575109977</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Ver1244">
+      <created>1608575885378</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608575885378</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,25 +394,31 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="before Users" />
     <MESSAGE value="Ver2012" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ver2012" />
+    <MESSAGE value="Ver2112" />
+    <MESSAGE value="Ver1244" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ver1244" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1324" height="197" key="GridCell.Tab.0.bottom" timestamp="1608573933384">
+    <state x="417" y="122" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608836598234">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1608573933384" />
-    <state width="1324" height="197" key="GridCell.Tab.0.center" timestamp="1608573933384">
+    <state x="417" y="122" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1608836598234" />
+    <state width="1324" height="197" key="GridCell.Tab.0.bottom" timestamp="1608831516425">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1608573933384" />
-    <state width="1324" height="197" key="GridCell.Tab.0.left" timestamp="1608573933384">
+    <state width="1324" height="197" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
+    <state width="1324" height="197" key="GridCell.Tab.0.center" timestamp="1608831516425">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1608573933384" />
-    <state width="1324" height="197" key="GridCell.Tab.0.right" timestamp="1608573933384">
+    <state width="1324" height="197" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
+    <state width="1324" height="197" key="GridCell.Tab.0.left" timestamp="1608831516425">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1608573933384" />
+    <state width="1324" height="197" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
+    <state width="1324" height="197" key="GridCell.Tab.0.right" timestamp="1608831516425">
+      <screen x="0" y="0" width="1366" height="740" />
+    </state>
+    <state width="1324" height="197" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
     <state width="1324" height="224" key="GridCell.Tab.1.bottom" timestamp="1607623959410">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -393,17 +455,21 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="547" y="78" key="RollbackChangesDialog/0.0.1366.740@0.0.1366.740" timestamp="1607852197197" />
-    <state x="343" y="163" width="672" height="677" key="run.anything.popup" timestamp="1608573596747">
+    <state x="396" y="0" width="574" height="740" key="find.popup" timestamp="1608582822199">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="343" y="163" width="672" height="677" key="run.anything.popup/0.0.1366.740@0.0.1366.740" timestamp="1608573596747" />
+    <state x="396" y="0" width="574" height="740" key="find.popup/0.0.1366.740@0.0.1366.740" timestamp="1608582822199" />
+    <state x="343" y="163" width="672" height="677" key="run.anything.popup" timestamp="1608831279009">
+      <screen x="0" y="0" width="1366" height="740" />
+    </state>
+    <state x="343" y="163" width="672" height="677" key="run.anything.popup/0.0.1366.740@0.0.1366.740" timestamp="1608831279009" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hello@db_migrate__4_.rcov" NAME="db:migrate (4) Coverage Results" MODIFIED="1608554719314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1608555334341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@db_migrate__1_.rcov" NAME="db:migrate (1) Coverage Results" MODIFIED="1608555485289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__4_.rcov" NAME="db:migrate (4) Coverage Results" MODIFIED="1608643554823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@Development__hello.rcov" NAME="Development: hello Coverage Results" MODIFIED="1606482311430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
-    <SUITE FILE_PATH="coverage/hello@db_migrate__3_.rcov" NAME="db:migrate (3) Coverage Results" MODIFIED="1608553747471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__3_.rcov" NAME="db:migrate (3) Coverage Results" MODIFIED="1608636514000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@db_migrate__5_.rcov" NAME="db:migrate (5) Coverage Results" MODIFIED="1608555812324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@db_migrate__2_.rcov" NAME="db:migrate (2) Coverage Results" MODIFIED="1608573933097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@Rails_console__hello.rcov" NAME="Rails console: hello Coverage Results" MODIFIED="1608404501871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />

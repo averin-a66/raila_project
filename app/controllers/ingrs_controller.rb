@@ -5,9 +5,13 @@ class IngrsController < ApplicationController
     @ingr = @recipe.ingrs.create(ingredient_params)
     redirect_to edit_recipe_path(@recipe)
   end
-
-  private
-  def ingredient_params
+  def destroy
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe.ingrs.find(params[:id]).destroy
+    redirect_to edit_recipe_path(@recipe)
+  end
+  private def ingredient_params
     params.require(:ingr).permit(  :name_in, :amount_in, :enum_id)
   end
+
 end

@@ -1,0 +1,35 @@
+-if current_user.id==@recipe.user_id
+  h3 Изменить рецепт
+  = form_for( :recipe, url: recipe_path(@recipe), method: :patch) do |f|
+    - @f=f
+
+    = render 'edit_new'
+    p
+    = f.submit('Запомнить', {:class => 'btn btn-warning'})
+    = link_to 'Отмена', recipes_path
+  table
+    - @recipe.ingrs.each do |i|
+      -system_to_id = Country.find(current_user.country_id).system_id
+      -value, enum_name, cvts  = EnumConvert.do_convert i.enum, system_to_id, i.amount_in
+      tr
+        th =i.name_in
+        th =number_with_precision(value, :precision => 1)
+        th =enum_name
+        th =link_to 'Удалить', recipe_ingr_path(@recipe, i), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
+  = form_with model: [ @recipe, @recipe.ingrs.build ] do |form|
+   table
+
+     tr
+       td
+         = form.label :name
+         = form.text_field :name_in
+       td
+         = form.label :quantity
+         = form.text_field :amount_in
+       td width='50px'
+        -system_id=Country.find(current_user.country_id).system_id
+        = form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :short, prompt: false)
+   p
+    = form.submit("Добавить")
+-else
+  h3 Вы не можете редактировать эту страницу
