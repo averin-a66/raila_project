@@ -1,21 +1,45 @@
 -if current_user.id==@recipe.user_id
-  h3 Изменить рецепт
+  - @translate_change = 'Изменить рецепт'
+  - @translate_submit = 'Запомнить'
+  - @translate_add = 'Добавить'
+  - @translate_otmena = 'Отмена'
+  - @country_name =Country.find(current_user.country_id).state
+  - if @country_name != 'Россия'
+    - @translate_change =YTrans::translate_text 'Изменить рецепт', 'ru', 'en'
+    - @translate_submit =YTrans::translate_text 'Запомнить', 'ru', 'en'
+    - @translate_otmena =YTrans::translate_text 'Отмена', 'ru', 'en'
+    - @translate_add =YTrans::translate_text 'Добавить', 'ru', 'en'
+  h3 = @translate_change
   = form_for( :recipe, url: recipe_path(@recipe), method: :patch) do |f|
     - @f=f
 
     = render 'edit_new'
     p
-    = f.submit('Запомнить', {:class => 'btn btn-warning'})
-    = link_to 'Отмена', recipes_path
+    = f.submit(@translate_submit, {:class => 'btn btn-warning'})
+    = link_to @translate_otmena, recipes_path
   table
     - @recipe.ingrs.each do |i|
       -system_to_id = Country.find(current_user.country_id).system_id
       -value, enum_name, cvts  = EnumConvert.do_convert i.enum, system_to_id, i.amount_in
+      - @translate_ingredient = i.name_in
+      - @translate_enum = enum_name
+      - @translate_del = 'Удалить'
+      - @country_name =Country.find(current_user.country_id).state
+      - if @country_name != 'Россия'
+        - @translate_ingredient =YTrans::translate_text i.name_in, 'ru', 'en'
+        - @translate_enum =YTrans::translate_text enum_name, 'ru', 'en'
+        - @translate_del =YTrans::translate_text 'Удалить', 'ru', 'en'
+      - else
+        - @recipe_user = Country.find(@recipe.user_id).id
+        - if current_user.country_id!= @recipe_user
+          - @translate_ingredient =YTrans::translate_text i.name_in, 'en', 'ru'
+          - @translate_enum =YTrans::translate_text enum_name, 'en', 'ru'
+
       tr
-        th =i.name_in
+        th = @translate_ingredient
         th =number_with_precision(value, :precision => 1)
-        th =enum_name
-        th =link_to 'Удалить', recipe_ingr_path(@recipe, i), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
+        th = @translate_enum
+        th =link_to @translate_del, recipe_ingr_path(@recipe, i), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
   = form_with model: [ @recipe, @recipe.ingrs.build ] do |form|
    table
 
@@ -26,10 +50,15 @@
        td
          = form.label :quantity
          = form.text_field :amount_in
-       td width='50px'
+       td width='100px'
         -system_id=Country.find(current_user.country_id).system_id
-        = form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :short, prompt: false)
+        - @country_name =Country.find(current_user.country_id).state
+
+        - if @country_name != 'Россия'
+           = form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :translated_name, prompt: false)
+        - else
+          = form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :name, prompt: false)
    p
-    = form.submit("Добавить")
+    = form.submit(@translate_add)
 -else
   h3 Вы не можете редактировать эту страницу

@@ -4,10 +4,18 @@
        = msg
 
 = @f.hidden_field(:user_id, {:value=>current_user.id})
+-@translate_name="Название рецепта"
+-@translate_des="Описание"
+-@country_name=Country.find(current_user.country_id).state
+-if @country_name!='Россия'
+  -@translate_name = YTrans::translate_text "Название рецепта", 'ru', 'en'
+  -@translate_des=YTrans::translate_text "Описание", 'ru', 'en'
 p
-  br Название рецепта
+  br
+   =@translate_name
 = @f.text_field(:name, {:class => 'form-control'} )
 
 p
-  br Описание
+  br
+    =@translate_des
   = @f.text_area(:body, {:class => 'form-control'} )

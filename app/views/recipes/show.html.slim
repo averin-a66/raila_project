@@ -1,38 +1,85 @@
+- @translate_rec=@recipe.name
+- @country_name =Country.find(current_user.country_id).state
+- if @country_name != 'Россия'
+  - @translate_rec =YTrans::translate_text @recipe.name, 'ru', 'en'
+- else
+  - @recipe_user = Country.find(@recipe.user_id).id
+  - if current_user.country_id!=@recipe_user
+    - @translate_rec =YTrans::translate_text @recipe.name, 'en', 'ru'
 h2
-  = @recipe.name
+  = @translate_rec
 hr
-h2 Ingredients
+- @translate_ingr = 'Ингредиенты'
+- @country_name =Country.find(current_user.country_id).state
+- if @country_name != 'Россия'
+  - @translate_ingr =YTrans::translate_text 'Ингредиенты', 'ru', 'en'
+h2 =@translate_ingr
 table
   - @recipe.ingrs.each do |i|
     p
        - system_to_id = Country.find(current_user.country_id).system_id
        - value, enum_name, cvts  = EnumConvert.do_convert i.enum, system_to_id, i.amount_in
+    - @translate_ingredient = i.name_in
+    -@translate_enum = enum_name
+    - @country_name =Country.find(current_user.country_id).state
+    - if @country_name != 'Россия'
+      - @translate_ingredient =YTrans::translate_text i.name_in, 'ru', 'en'
+      - @translate_enum =YTrans::translate_text enum_name, 'ru', 'en'
+    - else
+      - @recipe_user = Country.find(@recipe.user_id).id
+      - if current_user.country_id!=@recipe_user
+        - @translate_ingredient =YTrans::translate_text i.name_in, 'en', 'ru'
+        - @translate_enum =YTrans::translate_text enum_name, 'en', 'ru'
     tr
-      th = i.name_in
+      th = @translate_ingredient
       th = number_with_precision(value, :precision => 1)
-      th = enum_name
+      th = @translate_enum
 hr
-p = @recipe.body
+  -@translate_body = @recipe.body
+  - @translate_edit = 'Редактировать'
+  - @translate_del = 'Удалить'
+  - @translate_otmena = 'Отмена'
+  - @country_name =Country.find(current_user.country_id).state
+  - if @country_name != 'Россия'
+    - @translate_body =YTrans::translate_text @recipe.body, 'ru', 'en'
+    - @translate_edit = YTrans::translate_text 'Редактировать', 'ru', 'en'
+    -@translate_del= YTrans::translate_text 'Удалить', 'ru', 'en'
+    -@translate_otmena= YTrans::translate_text 'Отмена', 'ru', 'en'
+  - else
+    - @recipe_user = Country.find(@recipe.user_id).id
+    - if current_user.country_id!= @recipe_user
+      - @translate_body =YTrans::translate_text @recipe.body, 'en', 'ru'
+p = @translate_body
 p
   - if current_user.id==@recipe.user_id
     hr
-     = link_to 'Редактировать', edit_recipe_path(@recipe), :class => "btn btn-outline-warning"
-     = link_to 'Удалить', recipe_path(@recipe), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
-     = link_to 'Отмена', recipes_path, :class => "btn btn-outline-secondary"
+     = link_to @translate_edit, edit_recipe_path(@recipe), :class => "btn btn-outline-warning"
+     = link_to @translate_del, recipe_path(@recipe), method: :delete, data: {confirm: "Удалить?"}, :class => "btn btn-outline-danger"
+     = link_to @translate_otmena, recipes_path, :class => "btn btn-outline-secondary"
 hr
-
 h2
-    i class="fa fa-comments" Comments
+  i class="fa fa-comments" Comments
 
 - @recipe.comments.each do |comment|
+  - @translate_comment = comment.body
+  - @country_name =Country.find(current_user.country_id).state
+  - if @country_name != 'Россия'
+    - @translate_comment =YTrans::translate_text comment.body, 'ru', 'en'
+  - else
+  - @recipe_user = Country.find(@recipe.user_id).id
+  - if current_user.country_id!=@recipe_user
+    - @translate_comment =YTrans::translate_text comment.body, 'en', 'ru'
   p
     strong  User:
     = comment.user.email
   p
     strong Comment:
-    = comment.body
-
-h2 Add a comment:
+    = @translate_comment
+- @translate_add = 'Добавить комментарий'
+- @country_name =Country.find(current_user.country_id).state
+- if @country_name != 'Россия'
+  - @translate_add =YTrans::translate_text 'Добавить комментарий: ', 'ru', 'en'
+h2 = @translate_add
 = form_with model: [ @recipe, @recipe.comments.build ] do |form|
   = form.hidden_field :user_id, :value=>current_user.id
   p

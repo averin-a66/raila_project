@@ -42,5 +42,8 @@ class EnumsController < ApplicationController
       @enum.destroy
       redirect_to enums_path
     end
+  def translated_name
+    "# {YTrans::translate_text(:name, 'ru', 'en')}"
+  end
   end
 

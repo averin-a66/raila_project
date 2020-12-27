@@ -1,7 +1,21 @@
-h3 Добавить рецепт
+- @translate_add_recipe = 'Добавить рецепт'
+- @country_name =Country.find(current_user.country_id).state
+- if @country_name != 'Россия'
+  - @translate_add_recipe =YTrans::translate_text 'Добавить рецепт: ', 'ru', 'en'
+h2 =@translate_add_recipe
 = form_for( :recipe, url: recipes_path) do |f|
   - @f=f
   = render 'edit_new'
-  h2 Add a ingredient:
-  = @f.submit("Добавить ингредиент")
-  p = f.submit('Запомнить', {:class => 'btn btn-outline-success'})
+  - @translate_add_ingr = 'Добавить ингредиент'
+  - @country_name =Country.find(current_user.country_id).state
+  - if @country_name != 'Россия'
+    - @translate_add_ingr =YTrans::translate_text 'Добавить ингредиент: ', 'ru', 'en'
+  h2 =@translate_add_ingr
+  -@translate_add="Добавить ингредиент"
+  -@translate_submit="Запомнить"
+  -@country_name=Country.find(current_user.country_id).state
+  -if @country_name!='Россия'
+    -@translate_add = YTrans::translate_text "Добавить ингредиент", 'ru', 'en'
+    -@translate_submit=YTrans::translate_text "Запомнить", 'ru', 'en'
+  = @f.submit(@translate_add)
+  p = f.submit(@translate_submit, {:class => 'btn btn-outline-success'})

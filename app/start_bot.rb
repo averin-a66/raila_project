@@ -41,7 +41,7 @@ class TelegramService
 
   end
   def create
-    recipe=Recipe.last;
+    recipe=Recipe.last
       NotifySubscribersJob.set(wait_until: Date.tomorrow.noon).perform_later("Добавлен новый рецепт! Зайдите и посмотрите!")
       redirect_to recipe_path
   end

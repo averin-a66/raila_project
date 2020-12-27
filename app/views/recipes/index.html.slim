@@ -2,9 +2,14 @@
 div class="sidenav"
   = link_to "About", about_path
   = link_to "Contacts", contacts_path
-
 div class="main"
   h2 Main page
   - @recipes.each do |r|
-   h3
-    i class="fa fa-flask" = link_to r.name, recipe_path(r)
+     - @translate_rec=r.name
+     - @country_name =Country.find(current_user.country_id).state
+     - if @country_name !='Россия'
+       - @translate_rec =YTrans::translate_text r.name, 'ru', 'en'
+     - else
+       - @translate_rec = YTrans::translate_text r.name, 'en', 'ru'
+     h3
+      i class="fa fa-flask" = link_to @translate_rec, recipe_path(r)

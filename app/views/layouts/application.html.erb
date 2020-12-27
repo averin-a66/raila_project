@@ -17,16 +17,29 @@
       <h2 class="my-0 mr-md-auto font-weight-bold">Recipe_site</h2>
 
       <% if user_signed_in? %>
+        <% @translate_main = 'Главная' %>
+        <% @translate_add = 'Добавить' %>
+        <% @translate_hello = 'Здравствуйте, ' %>
+
+        <% @translate_logout = ' Выйти' %>
+
+        <% @country_name =Country.find(current_user.country_id).state %>
+        <% if @country_name != 'Россия' %>
+          <% @translate_main =YTrans::translate_text 'Главная ', 'ru', 'en' %>
+          <% @translate_add =YTrans::translate_text 'Добавить ', 'ru', 'en' %>
+          <% @translate_hello =YTrans::translate_text 'Здравствуйте, ', 'ru', 'en' %>
+          <% @translate_logout =YTrans::translate_text 'Выйти ', 'ru', 'en' %>
+        <% end %>
       <nav class="my-2 my-md-0 mr-md-3">
-        <span class="text-dark"><%= link_to "Главная", home_path, :class => "btn btn-outline-info"%></span>
-        <span class="text-dark"><%= link_to "Добавить", new_recipe_path, :class => "btn btn-outline-info" %></span>
+        <span class="text-dark"><%= link_to @translate_main, home_path, :class => "btn btn-outline-info"%></span>
+        <span class="text-dark"><%= link_to @translate_add, new_recipe_path, :class => "btn btn-outline-info" %></span>
       </nav>
 <% end %>
         <% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.name %></span>
-          <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+    <span><%= @translate_hello %> <%= current_user.name %></span>
+          <%= link_to @translate_logout, destroy_user_session_path, :method => :delete %>
 <% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <%= link_to 'Log in ', new_user_session_path %> или <%= link_to ' register', new_user_registration_path %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
 <% end %>
