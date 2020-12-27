@@ -10,22 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver1244">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/enums_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/enums_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/enum.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/enum.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/start_bot.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/start_bot.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/_edit_new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/_edit_new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/index.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/index.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/1f6134a684ff7f" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/1b/1f6134a684ff7f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
-    </list>
+    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver2712" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -308,7 +293,7 @@
       <workItem from="1607624512048" duration="51130000" />
       <workItem from="1608303127243" duration="52097000" />
       <workItem from="1608629474760" duration="9622000" />
-      <workItem from="1608722004045" duration="16646000" />
+      <workItem from="1608722004045" duration="17161000" />
     </task>
     <task id="LOCAL-00001" summary="before Users">
       <created>1607104108162</created>
@@ -352,7 +337,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608837073549</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ver2712">
+      <created>1609099061389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1609099061389</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +367,8 @@
     <MESSAGE value="Ver2012" />
     <MESSAGE value="Ver2112" />
     <MESSAGE value="Ver1244" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ver1244" />
+    <MESSAGE value="Ver2712" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ver2712" />
   </component>
   <component name="WindowStateProjectService">
     <state x="417" y="122" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608836598234">
