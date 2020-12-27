@@ -27,13 +27,13 @@
 }
 
 .ct-label.ct-horizontal.ct-end {
-  -webkit-box-align: flex-start;
+
   -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
+
   align-items: flex-start;
-  -webkit-box-pack: flex-start;
+
   -webkit-justify-content: flex-start;
-  -ms-flex-pack: flex-start;
+
   justify-content: flex-start;
   text-align: left;
   text-anchor: start;
@@ -251,7 +251,6 @@ footer ul li a:hover {
   border-radius: 8px 0 0 8px;
   text-align: center;
   top: 120px;
-  .badge-primary-background-color: #9c27b0;
 }
 
 .fixed-plugin .SocialMediaShareButton,
