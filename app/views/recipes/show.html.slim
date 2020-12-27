@@ -66,9 +66,9 @@ h2
   - if @country_name != 'Россия'
     - @translate_comment =YTrans::translate_text comment.body, 'ru', 'en'
   - else
-  - @recipe_user = Country.find(@recipe.user_id).id
-  - if current_user.country_id!=@recipe_user
-    - @translate_comment =YTrans::translate_text comment.body, 'en', 'ru'
+     - @recipe_user = Country.find(@recipe.user_id).id
+      - if current_user.country_id!=@recipe_user
+        - @translate_comment =YTrans::translate_text comment.body, 'en', 'ru'
   p
     strong  User:
     = comment.user.email

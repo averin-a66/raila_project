@@ -33467,3 +33467,238 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 2240ms (Views: 2231.7ms | ActiveRecord: 1.4ms | Allocations: 37116)
 
 
+Started GET "/" for 127.0.0.1 at 2020-12-27 23:33:55 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (71.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/index.html.slim within layouts/application
+  [1m[36mRecipe Load (16.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.slim:7
+  [1m[36mCountry Load (2.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  [1m[36mCACHE Country Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  Rendered recipes/index.html.slim within layouts/application (Duration: 1579.4ms | Allocations: 12310)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 4879ms (Views: 4538.1ms | ActiveRecord: 91.4ms | Allocations: 120221)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-27 23:34:15 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/index.html.slim within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.slim:7
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  Rendered recipes/index.html.slim within layouts/application (Duration: 1108.8ms | Allocations: 5251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 2663ms (Views: 2656.8ms | ActiveRecord: 1.6ms | Allocations: 31047)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-12-27 23:34:21 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:66:in `show'
+  Rendering recipes/show.html.slim within layouts/application
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:13
+  [1m[36mIngr Load (15.0ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:18
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:20
+  [1m[36mEnum Load (3.9ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:21
+  [1m[36mEnumConvert Load (32.8ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_from_id=1 and enum_to_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:17:in `do_convert'
+  [1m[36mEnumConvert Load (21.1ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_to_id=1 and enum_from_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:21:in `do_convert'
+  [1m[36mEnum Load (0.8ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/enum_convert.rb:22:in `block in do_convert'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:24
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:42
+  [1m[36mComment Load (4.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:63
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:79
+  Rendered recipes/show.html.slim within layouts/application (Duration: 25374.4ms | Allocations: 54520)
+Completed 500 Internal Server Error in 25387ms (ActiveRecord: 80.2ms | Allocations: 57435)
+
+
+  
+ActionView::Template::Error (Failed to open TCP connection to translate.api.cloud.yandex.net:443 (A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond. - connect(2) for "translate.api.cloud.yandex.net" port 443)):
+    78: - @translate_add = 'Добавить комментарий'
+    79: - @country_name =Country.find(current_user.country_id).state
+    80: - if @country_name != 'Россия'
+    81:   - @translate_add =YTrans::translate_text 'Добавить комментарий: ', 'ru', 'en'
+    82: h2 = @translate_add
+    83: = form_with model: [ @recipe, @recipe.comments.build ] do |form|
+    84:   = form.hidden_field :user_id, :value=>current_user.id
+  
+app/controllers/recipes_controller.rb:33:in `translate_text'
+app/views/recipes/show.html.slim:81
+Started GET "/recipes/1" for 127.0.0.1 at 2020-12-27 23:34:54 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:66:in `show'
+  Rendering recipes/show.html.slim within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:13
+  [1m[36mIngr Load (1.0ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:18
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:20
+  [1m[36mEnum Load (1.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:21
+  [1m[36mEnumConvert Load (1.6ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_from_id=1 and enum_to_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:17:in `do_convert'
+  [1m[36mEnumConvert Load (1.5ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_to_id=1 and enum_from_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:21:in `do_convert'
+  [1m[36mEnum Load (1.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/enum_convert.rb:22:in `block in do_convert'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:24
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:42
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:63
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:79
+  Rendered recipes/show.html.slim within layouts/application (Duration: 3598.3ms | Allocations: 28356)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 6034ms (Views: 6018.7ms | ActiveRecord: 9.1ms | Allocations: 55070)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-12-27 23:36:59 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:66:in `show'
+  Rendering recipes/show.html.slim within layouts/application
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:2
+  [1m[36mCACHE Country Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:13
+  [1m[36mIngr Load (1.1ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:18
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:20
+  [1m[36mEnum Load (1.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:21
+  [1m[36mEnumConvert Load (1.6ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_from_id=1 and enum_to_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:17:in `do_convert'
+  [1m[36mEnumConvert Load (1.6ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_to_id=1 and enum_from_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:21:in `do_convert'
+  [1m[36mEnum Load (0.9ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/enum_convert.rb:22:in `block in do_convert'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:24
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:42
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:63
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:79
+  Rendered recipes/show.html.slim within layouts/application (Duration: 3821.8ms | Allocations: 23529)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 5785ms (Views: 5765.6ms | ActiveRecord: 9.8ms | Allocations: 50362)
+
+
+Started POST "/recipes/1/comments" for 127.0.0.1 at 2020-12-27 23:37:15 +0300
+Processing by CommentsController#create as JS
+  Parameters: {"authenticity_token"=>"waWdIX55r2udrOyHJeuizU0g98fBEJ+78YecfGxSUCsJ5vv/OnqstZCJYlQYS5gdJefljKnVcaxe7Fg/AFNluQ==", "comment"=>{"user_id"=>"2", "body"=>"Great!"}, "commit"=>"Create Comment", "recipe_id"=>"1"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:4:in `create'
+  [1m[35m (34.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[36mComment Create (239.1ms)[0m  [1m[32mINSERT INTO "comments" ("user_id", "body", "recipe_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["body", "Great!"], ["recipe_id", 1], ["created_at", "2020-12-27 20:37:16.162250"], ["updated_at", "2020-12-27 20:37:16.162250"]]
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:6:in `create'
+Redirected to http://127.0.0.1:3000/recipes/1
+Completed 200 OK in 322ms (ActiveRecord: 289.7ms | Allocations: 6230)
+
+
+Started GET "/recipes/1" for 127.0.0.1 at 2020-12-27 23:37:16 +0300
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:66:in `show'
+  Rendering recipes/show.html.slim within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:13
+  [1m[36mIngr Load (2.0ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:18
+  [1m[36mCACHE Country Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:20
+  [1m[36mEnum Load (1.1ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:21
+  [1m[36mEnumConvert Load (1.7ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_from_id=1 and enum_to_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:17:in `do_convert'
+  [1m[36mEnumConvert Load (1.6ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" WHERE (enum_to_id=1 and enum_from_id in (select id from enums where system_id=2))[0m
+  ↳ app/models/enum_convert.rb:21:in `do_convert'
+  [1m[36mEnum Load (0.8ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/enum_convert.rb:22:in `block in do_convert'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:24
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:42
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/views/recipes/show.html.slim:63
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:65
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:69
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:74
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/show.html.slim:79
+  Rendered recipes/show.html.slim within layouts/application (Duration: 4292.4ms | Allocations: 28745)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 6751ms (Views: 6732.2ms | ActiveRecord: 11.7ms | Allocations: 55563)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-27 23:37:37 +0300
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering recipes/index.html.slim within layouts/application
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  ↳ app/views/recipes/index.html.slim:7
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  [1m[36mCACHE Country Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/index.html.slim:9
+  Rendered recipes/index.html.slim within layouts/application (Duration: 1821.8ms | Allocations: 5255)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:26
+Completed 200 OK in 4645ms (Views: 4638.8ms | ActiveRecord: 1.5ms | Allocations: 31495)
+
+
