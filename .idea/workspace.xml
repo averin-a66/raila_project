@@ -10,29 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver2712">
-      <change beforePath="$PROJECT_DIR$/.idea/hello.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hello.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/pages/about.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/about.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/new.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/recipes/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/show.html.slim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/22/34329041bbfe15" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/22/34329041bbfe15" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/58/47665ff9f7d425" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/58/47665ff9f7d425" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
-    </list>
+    <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver2712" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -318,7 +296,7 @@
       <workItem from="1607624512048" duration="51130000" />
       <workItem from="1608303127243" duration="52097000" />
       <workItem from="1608629474760" duration="9622000" />
-      <workItem from="1608722004045" duration="28207000" />
+      <workItem from="1608722004045" duration="28526000" />
     </task>
     <task id="LOCAL-00001" summary="before Users">
       <created>1607104108162</created>
@@ -390,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609101540131</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Ver2712">
+      <created>1609237951923</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609237951923</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
