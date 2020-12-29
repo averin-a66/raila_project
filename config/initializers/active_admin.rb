@@ -325,7 +325,8 @@ ActiveAdmin.setup do |config|
   # You can inherit it with own class and inject it for all resources
   #
   # config.order_clause = MyOrderClause
-
+  #config.comments_registration_name = "OldComment"
+  # config.show_comments_in_menu = false
   # == Webpacker
   #
   # By default, Active Admin uses Sprocket's asset pipeline.

@@ -32,7 +32,6 @@ ActiveAdmin.register Recipe do
                    new_record: true do |a|
           a.input :name_in
           a.input :amount_in
-          # a.collection_select(:enum_id,  Enum.all.order(:name), :id, :name, prompt: true)
           a.input :enum_id, :as => :select, :collection => Enum.all
 
         end
@@ -41,15 +40,16 @@ ActiveAdmin.register Recipe do
       f.inputs do
         f.has_many :comments,
                    new_record: 'Leave Comment',
-                   remove_record: 'Remove Comment',
-                   allow_destroy: -> (c) { c.author?(current_admin_user) } do |b|
-          b.input :body
-        end
+                   remove_record:  true,
+                   allow_destroy: true,
+            new_record: true do |a|
+        a.input :body
 
-      end
+        end
       f.actions
 
-    end
+      end
+      end
      show :name => :name do
        attributes_table_for recipe do
          row :body
@@ -67,6 +67,7 @@ ActiveAdmin.register Recipe do
            column :user_id
            column :body
          end
+
        end
        active_admin_comments
      end
@@ -84,6 +85,5 @@ ActiveAdmin.register Recipe do
     #   permitted << :other if params[:action] == 'create' && current_user.admin?
     #   permitted
     # end
-
 
   end

@@ -38746,3 +38746,1293 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 127ms (Views: 126.2ms | ActiveRecord: 0.0ms | Allocations: 23373)
 
 
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-29 13:42:39 +0300
+Processing by Admin::CountriesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 432)
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2020-12-29 13:42:40 +0300
+Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/shared/_links.erb (Duration: 22.8ms | Allocations: 573)
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (Duration: 1184.5ms | Allocations: 12373)
+Completed 200 OK in 4512ms (Views: 4434.6ms | ActiveRecord: 40.5ms | Allocations: 284491)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2020-12-29 13:43:05 +0300
+Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7iZfxWoBUOSu7xDuykeomVh8mj3BGP5SOowZ7yloQWyyNmcKP1Bu0cIhBldKBA91uE3xQpNJefY6WqpqGEGg9g==", "admin_user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (128.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."email" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["email", "admin@example.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/admin/countries
+Completed 302 Found in 556ms (ActiveRecord: 129.0ms | Allocations: 5193)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-29 13:43:06 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (116.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (38.9ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.1ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 1323.9ms | Allocations: 100327)
+Completed 200 OK in 1598ms (Views: 1184.7ms | ActiveRecord: 166.0ms | Allocations: 104413)
+
+
+Started GET "/admin/countries/2/edit" for 127.0.0.1 at 2020-12-29 13:43:12 +0300
+Processing by Admin::CountriesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mSystem Load (0.7ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 384.2ms | Allocations: 75767)
+Completed 200 OK in 404ms (Views: 393.2ms | ActiveRecord: 2.3ms | Allocations: 79739)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 13:43:16 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 283.2ms | Allocations: 88922)
+Completed 200 OK in 302ms (Views: 287.6ms | ActiveRecord: 5.9ms | Allocations: 92032)
+
+
+Started GET "/admin/recipes/3/edit" for 127.0.0.1 at 2020-12-29 13:43:19 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mIngr Load (3.9ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (3.8ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 3]]
+  ↳ app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 1355.9ms | Allocations: 100755)
+Completed 200 OK in 1372ms (Views: 1351.9ms | ActiveRecord: 11.8ms | Allocations: 104485)
+
+
+Started GET "/admin/recipes/1/edit" for 127.0.0.1 at 2020-12-29 13:43:25 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 500.5ms | Allocations: 93286)
+Completed 500 Internal Server Error in 509ms (ActiveRecord: 2.9ms | Allocations: 96445)
+
+
+  
+ActionView::Template::Error (undefined method `author?' for #<Comment:0x000000000b2753c0>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:45:in `block (4 levels) in <main>'
+app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+app/admin/recipes.rb:41:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:43:44 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.8ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 320.9ms | Allocations: 113001)
+Completed 500 Internal Server Error in 330ms (ActiveRecord: 3.6ms | Allocations: 116157)
+
+
+  
+ActionView::Template::Error (undefined method `author?' for #<Comment:0x000000000f01a540>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:45:in `block (4 levels) in <main>'
+app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+app/admin/recipes.rb:41:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:45:01 +0300
+  
+SyntaxError (C:/test/hello/app/admin/recipes.rb:88: syntax error, unexpected end, expecting end-of-input
+  end
+  ^~~):
+  
+app/admin/recipes.rb:88: syntax error, unexpected end, expecting end-of-input
+app/admin/recipes.rb:88: syntax error, unexpected end, expecting end-of-input
+app/admin/recipes.rb:88: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:45:17 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:36:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 393.5ms | Allocations: 128510)
+Completed 500 Internal Server Error in 468ms (ActiveRecord: 32.7ms | Allocations: 144006)
+
+
+  
+ActionView::Template::Error (no block given (yield)):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:42:in `block (3 levels) in <main>'
+app/admin/recipes.rb:41:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:46:06 +0300
+  
+SyntaxError (C:/test/hello/app/admin/recipes.rb:87: syntax error, unexpected end-of-input, expecting end):
+  
+app/admin/recipes.rb:87: syntax error, unexpected end-of-input, expecting end
+app/admin/recipes.rb:87: syntax error, unexpected end-of-input, expecting end
+app/admin/recipes.rb:87: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:46:18 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 358.0ms | Allocations: 138421)
+Completed 200 OK in 462ms (Views: 345.4ms | ActiveRecord: 29.3ms | Allocations: 153912)
+
+
+Started GET "/admin/recipes/1/edit" for 127.0.0.1 at 2020-12-29 13:46:31 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 349.9ms | Allocations: 97452)
+Completed 200 OK in 370ms (Views: 349.8ms | ActiveRecord: 4.3ms | Allocations: 100633)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:46:45 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 241.3ms | Allocations: 117205)
+Completed 200 OK in 250ms (Views: 240.8ms | ActiveRecord: 2.4ms | Allocations: 120388)
+
+
+Started PATCH "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 13:46:52 +0300
+Processing by Admin::RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"L1cEq76+miLSklfBiBhMWIq/kx91UbymBquWg6zM6lb7rA3O7f3qgIbxMe1zHvnLr0tE0IK9R0/+vsPUIo5bYg==", "recipe"=>{"name"=>"Recipe from England", "body"=>"Boil onion, carrot and meat for 20 minutes", "ingrs_attributes"=>{"0"=>{"name_in"=>"Meat", "amount_in"=>"5.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"3"}, "1"=>{"name_in"=>"Carrot", "amount_in"=>"1.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"4"}, "2"=>{"name_in"=>"Onion", "amount_in"=>"1.5", "enum_id"=>"2", "_destroy"=>"0", "id"=>"5"}}, "comments_attributes"=>{"0"=>{"body"=>"Great", "_destroy"=>"1", "id"=>"2"}}}, "commit"=>"Update Recipe", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[31mUnpermitted parameters: :ingrs_attributes, :comments_attributes[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (44.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/recipes/2
+Completed 302 Found in 195ms (ActiveRecord: 68.2ms | Allocations: 21061)
+
+
+Started GET "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 13:46:53 +0300
+Processing by Admin::RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:57:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:65:in `block (3 levels) in <main>'
+  [1m[35m (90.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  [1m[36mActiveAdmin::Comment Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 645.2ms | Allocations: 92629)
+Completed 200 OK in 663ms (Views: 557.9ms | ActiveRecord: 98.8ms | Allocations: 96630)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 13:47:01 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 268.4ms | Allocations: 88061)
+Completed 200 OK in 277ms (Views: 267.0ms | ActiveRecord: 3.0ms | Allocations: 90463)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 13:53:38 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (2.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (35.4ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (65.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 444.4ms | Allocations: 101683)
+Completed 200 OK in 502ms (Views: 344.2ms | ActiveRecord: 105.0ms | Allocations: 112341)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:53:43 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (2.0ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (1.9ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 3366.7ms | Allocations: 430680)
+Completed 500 Internal Server Error in 3386ms (ActiveRecord: 34.5ms | Allocations: 433945)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveAdmin::FormBuilder:0x000000000ae21918>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:49:in `block (4 levels) in <main>'
+app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+app/admin/recipes.rb:40:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:56:43 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.7ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 2101.2ms | Allocations: 432046)
+Completed 500 Internal Server Error in 2164ms (ActiveRecord: 39.5ms | Allocations: 447520)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveAdmin::FormBuilder:0x0000000008f34230>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:49:in `block (4 levels) in <main>'
+app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+app/admin/recipes.rb:40:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:56:53 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 1377.0ms | Allocations: 411781)
+Completed 500 Internal Server Error in 1388ms (ActiveRecord: 3.1ms | Allocations: 414926)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveAdmin::FormBuilder:0x000000000ae29960>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:49:in `block (4 levels) in <main>'
+app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+app/admin/recipes.rb:40:in `block (2 levels) in <main>'
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at C:/Ruby26-x64/bin/rake:23)
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:58:10 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 1434.6ms | Allocations: 432013)
+Completed 500 Internal Server Error in 1516ms (ActiveRecord: 42.2ms | Allocations: 447487)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveAdmin::FormBuilder:0x0000000010f01e40>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:49:in `block (4 levels) in <main>'
+app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+app/admin/recipes.rb:40:in `block (2 levels) in <main>'
+Started GET "/admin" for 127.0.0.1 at 2020-12-29 13:58:15 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 173.6ms | Allocations: 62452)
+Completed 200 OK in 237ms (Views: 178.9ms | ActiveRecord: 0.5ms | Allocations: 64894)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 13:58:18 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 253.9ms | Allocations: 97761)
+Completed 200 OK in 281ms (Views: 247.6ms | ActiveRecord: 8.0ms | Allocations: 100168)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 13:58:20 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.8ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 1241.8ms | Allocations: 411725)
+Completed 500 Internal Server Error in 1252ms (ActiveRecord: 3.0ms | Allocations: 414862)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<ActiveAdmin::FormBuilder:0x00000000108d58a0>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:49:in `block (4 levels) in <main>'
+app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+app/admin/recipes.rb:40:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:03:14 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 296.8ms | Allocations: 137177)
+Completed 500 Internal Server Error in 356ms (ActiveRecord: 27.8ms | Allocations: 152641)
+
+
+  
+ActionView::Template::Error (undefined method `show' for #<ActiveAdmin::Views::ActiveAdminForm:0x000000000eea93f0>):
+    1: insert_tag renderer_for(:edit)
+  
+app/admin/recipes.rb:53:in `block (2 levels) in <main>'
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:04:01 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.8ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 332.8ms | Allocations: 136280)
+Completed 200 OK in 391ms (Views: 318.3ms | ActiveRecord: 27.8ms | Allocations: 151751)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:05:22 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.7ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 304.0ms | Allocations: 138133)
+Completed 200 OK in 363ms (Views: 289.7ms | ActiveRecord: 27.3ms | Allocations: 153623)
+
+
+Started PATCH "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 14:05:29 +0300
+Processing by Admin::RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"+S1SlIhxq0ItnCC/isSezz0sA0WXeeIvtozPsEAg15ct1lvx2zLb4Hn/RpNxwitcGNjUimCVGcZOmZrnzmJmow==", "recipe"=>{"name"=>"Recipe from England", "body"=>"Boil onion, carrot and meat for 20 minutes", "ingrs_attributes"=>{"0"=>{"name_in"=>"Meat", "amount_in"=>"5.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"3"}, "1"=>{"name_in"=>"Carrot", "amount_in"=>"1.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"4"}, "2"=>{"name_in"=>"Onion", "amount_in"=>"1.5", "enum_id"=>"2", "_destroy"=>"0", "id"=>"5"}}, "comments_attributes"=>{"0"=>{"body"=>"Great", "_destroy"=>"1", "id"=>"2"}}}, "commit"=>"Update Recipe", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[31mUnpermitted parameters: :ingrs_attributes, :comments_attributes[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/recipes/2
+Completed 302 Found in 218ms (ActiveRecord: 7.6ms | Allocations: 18252)
+
+
+Started GET "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 14:05:30 +0300
+Processing by Admin::RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:57:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:65:in `block (3 levels) in <main>'
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  [1m[36mActiveAdmin::Comment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 278.9ms | Allocations: 79967)
+Completed 200 OK in 289ms (Views: 274.4ms | ActiveRecord: 6.4ms | Allocations: 83167)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:05:38 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 289.3ms | Allocations: 88031)
+Completed 200 OK in 296ms (Views: 287.6ms | ActiveRecord: 3.3ms | Allocations: 90432)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:05:42 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.4ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 288.7ms | Allocations: 117241)
+Completed 200 OK in 298ms (Views: 288.1ms | ActiveRecord: 2.5ms | Allocations: 120407)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:06:11 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.4ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 325.5ms | Allocations: 138139)
+Completed 200 OK in 389ms (Views: 312.4ms | ActiveRecord: 26.8ms | Allocations: 153618)
+
+
+Started PATCH "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 14:06:18 +0300
+Processing by Admin::RecipesController#update as HTML
+  Parameters: {"authenticity_token"=>"DItDYGKMTK6HG1UMWB+0OpcCZryXSQBWjsb0LGkCM8jYcEoFMc88DNN4MyCjGQGpsvaxc2Cl+79206F750CC/A==", "recipe"=>{"name"=>"Recipe from England", "body"=>"Boil onion, carrot and meat for 20 minutes", "ingrs_attributes"=>{"0"=>{"name_in"=>"Meat", "amount_in"=>"5.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"3"}, "1"=>{"name_in"=>"Carrot", "amount_in"=>"1.0", "enum_id"=>"2", "_destroy"=>"0", "id"=>"4"}, "2"=>{"name_in"=>"Onion", "amount_in"=>"1.5", "enum_id"=>"2", "_destroy"=>"0", "id"=>"5"}}, "comments_attributes"=>{"0"=>{"body"=>"Great", "_destroy"=>"1", "id"=>"2"}}}, "commit"=>"Update Recipe", "id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[31mUnpermitted parameters: :ingrs_attributes, :comments_attributes[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/admin/recipes/2
+Completed 302 Found in 41ms (ActiveRecord: 7.8ms | Allocations: 18236)
+
+
+Started GET "/admin/recipes/2" for 127.0.0.1 at 2020-12-29 14:06:19 +0300
+Processing by Admin::RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[36mIngr Load (0.5ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:57:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.9ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/recipes.rb:60:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:65:in `block (3 levels) in <main>'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  [1m[36mActiveAdmin::Comment Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "Recipe"], ["resource_id", 2], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/admin/recipes.rb:70:in `block (2 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 301.2ms | Allocations: 79942)
+Completed 200 OK in 312ms (Views: 299.2ms | ActiveRecord: 5.0ms | Allocations: 83134)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:06:22 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 298.1ms | Allocations: 87975)
+Completed 200 OK in 316ms (Views: 296.8ms | ActiveRecord: 3.2ms | Allocations: 90377)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:09:57 +0300
+  
+NoMethodError (undefined method `id' for #<Class:0x0000000010e31a60>
+Did you mean?  ids):
+  
+app/admin/active_admin_comments.rb:17:in `block in <main>'
+app/admin/active_admin_comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:10:13 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "comments"."id" FROM "comments"[0m
+  ↳ app/admin/active_admin_comments.rb:17:in `block in <main>'
+  
+NoMethodError (undefined method `link_to' for #<ActiveAdmin::ResourceDSL:0x0000000010affd38>):
+  
+app/admin/active_admin_comments.rb:17:in `block in <main>'
+app/admin/active_admin_comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:10:25 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "comments"."id" FROM "comments"[0m
+  ↳ app/admin/active_admin_comments.rb:17:in `block in <main>'
+  
+NoMethodError (undefined method `link_to' for #<ActiveAdmin::ResourceDSL:0x000000000ecb4b30>):
+  
+app/admin/active_admin_comments.rb:17:in `block in <main>'
+app/admin/active_admin_comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:12:22 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "comments"."id" FROM "comments"[0m
+  ↳ app/admin/active_admin_comments.rb:17:in `block in <main>'
+  
+NoMethodError (undefined method `link_to' for #<ActiveAdmin::ResourceDSL:0x0000000010c5d8b0>):
+  
+app/admin/active_admin_comments.rb:17:in `block in <main>'
+app/admin/active_admin_comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:12:33 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (1.0ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 259.5ms | Allocations: 102073)
+Completed 200 OK in 325ms (Views: 253.6ms | ActiveRecord: 20.0ms | Allocations: 113113)
+
+
+Started GET "/admin/recipes/2/edit" for 127.0.0.1 at 2020-12-29 14:12:37 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.4ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 331.8ms | Allocations: 138336)
+Completed 200 OK in 388ms (Views: 317.7ms | ActiveRecord: 27.1ms | Allocations: 153835)
+
+
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:12:46 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:14:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:14:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:15:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:15:10 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:15:30 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/active_admin_comments/id/destroy" for 127.0.0.1 at 2020-12-29 14:15:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/admin/active_admin_comments/id/destroy"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/admin/admin_users/1" for 127.0.0.1 at 2020-12-29 14:16:25 +0300
+Processing by Admin::AdminUsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3[0m  [["resource_type", "AdminUser"], ["resource_id", 1], ["namespace", "admin"]]
+  [1m[36mActiveAdmin::Comment Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = $1 AND "active_admin_comments"."resource_id" = $2 AND "active_admin_comments"."namespace" = $3 LIMIT $4 OFFSET $5[0m  [["resource_type", "AdminUser"], ["resource_id", 1], ["namespace", "admin"], ["LIMIT", 1], ["OFFSET", 0]]
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/show.html.arb (Duration: 410.6ms | Allocations: 75819)
+Completed 200 OK in 583ms (Views: 414.9ms | ActiveRecord: 9.3ms | Allocations: 90766)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:16:31 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (2782.1ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 3035.2ms | Allocations: 82700)
+Completed 200 OK in 3053ms (Views: 260.7ms | ActiveRecord: 2785.4ms | Allocations: 85858)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:26:37 +0300
+  
+ActiveAdmin::ResourceCollection::ConfigMismatch (You're trying to register Comment as Comment, but the existing ActiveAdmin::Resource config was built for ActiveAdmin::Comment!):
+  
+app/admin/comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:26:52 +0300
+  
+ActiveAdmin::ResourceCollection::ConfigMismatch (You're trying to register Comment as Comment, but the existing ActiveAdmin::Resource config was built for ActiveAdmin::Comment!):
+  
+app/admin/comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:27:09 +0300
+  
+SyntaxError (C:/test/hello/app/admin/active_admin_comments.rb:1: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+...ster ActiveAdmin::Comment, as "ActAdmComments" do
+...                              ^
+C:/test/hello/app/admin/active_admin_comments.rb:1: syntax error, unexpected do (for block), expecting end-of-input
+...Comment, as "ActAdmComments" do
+...                             ^~):
+  
+app/admin/active_admin_comments.rb:1: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/admin/active_admin_comments.rb:1: syntax error, unexpected do (for block), expecting end-of-input
+app/admin/active_admin_comments.rb:1: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/admin/active_admin_comments.rb:1: syntax error, unexpected do (for block), expecting end-of-input
+app/admin/active_admin_comments.rb:1: syntax error, unexpected tSTRING_BEG, expecting do or '{' or '('
+app/admin/active_admin_comments.rb:1: syntax error, unexpected do (for block), expecting end-of-input
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:28:19 +0300
+  
+ActiveAdmin::ResourceCollection::ConfigMismatch (You're trying to register Comment as Comment, but the existing ActiveAdmin::Resource config was built for ActiveAdmin::Comment!):
+  
+app/admin/comments.rb:1:in `<main>'
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:33:30 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (1.9ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 320.4ms | Allocations: 83390)
+Completed 200 OK in 385ms (Views: 312.5ms | ActiveRecord: 13.0ms | Allocations: 93753)
+
+
+Started GET "/admin" for 127.0.0.1 at 2020-12-29 14:33:35 +0300
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/page/index.html.arb (Duration: 204.6ms | Allocations: 63496)
+Completed 200 OK in 553ms (Views: 206.3ms | ActiveRecord: 312.8ms | Allocations: 73669)
+
+
+Started GET "/admin/act_adm_comments" for 127.0.0.1 at 2020-12-29 14:33:39 +0300
+Processing by Admin::ActAdmCommentsController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 196.0ms | Allocations: 79104)
+Completed 200 OK in 210ms (Views: 200.9ms | ActiveRecord: 2.9ms | Allocations: 82151)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:33:41 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.8ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 221.7ms | Allocations: 82600)
+Completed 200 OK in 229ms (Views: 220.7ms | ActiveRecord: 3.3ms | Allocations: 85133)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-29 14:33:43 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (30.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (67.9ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.8ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (1.0ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 398.9ms | Allocations: 98387)
+Completed 200 OK in 417ms (Views: 296.7ms | ActiveRecord: 112.2ms | Allocations: 101372)
+
+
+Started GET "/admin/recipes" for 127.0.0.1 at 2020-12-29 14:33:45 +0300
+Processing by Admin::RecipesController#index as HTML
+  [1m[36mAdminUser Load (0.6ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "recipes"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "recipes" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY "recipes"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (21.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 295.5ms | Allocations: 100059)
+Completed 200 OK in 310ms (Views: 266.3ms | ActiveRecord: 36.3ms | Allocations: 103111)
+
+
+Started GET "/admin/recipes/1/edit" for 127.0.0.1 at 2020-12-29 14:33:48 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngr Load (16.4ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (27.8ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (199.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 552.4ms | Allocations: 116372)
+Completed 200 OK in 563ms (Views: 292.8ms | ActiveRecord: 261.8ms | Allocations: 119662)
+
+
+Started GET "/admin/recipes/1/edit" for 127.0.0.1 at 2020-12-29 14:34:17 +0300
+Processing by Admin::RecipesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mIngr Load (0.6ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" WHERE "ingrs"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:30:in `block (3 levels) in <main>'
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  ↳ app/admin/recipes.rb:35:in `block (4 levels) in <main>'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+  ↳ app/admin/recipes.rb:41:in `block (3 levels) in <main>'
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/edit.html.arb (Duration: 290.9ms | Allocations: 118801)
+Completed 200 OK in 351ms (Views: 277.1ms | ActiveRecord: 26.4ms | Allocations: 134349)
+
+
+Started GET "/admin/ingrs" for 127.0.0.1 at 2020-12-29 14:34:22 +0300
+Processing by Admin::IngrsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ingrs" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ingrs" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "ingrs"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "ingrs" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mIngr Load (0.7ms)[0m  [1m[34mSELECT "ingrs".* FROM "ingrs" ORDER BY "ingrs"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Recipe Load (0.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEnum Load (1.3ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes"[0m
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 417.8ms | Allocations: 132131)
+Completed 200 OK in 432ms (Views: 418.7ms | ActiveRecord: 7.2ms | Allocations: 135266)
+
+
+Started GET "/admin/enum_converts" for 127.0.0.1 at 2020-12-29 14:34:25 +0300
+Processing by Admin::EnumConvertsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (83.1ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enum_converts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enum_converts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "enum_converts"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "enum_converts" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mEnumConvert Load (1.1ms)[0m  [1m[34mSELECT "enum_converts".* FROM "enum_converts" ORDER BY "enum_converts"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/enum_converts.rb:5:in `block (2 levels) in <main>'
+  [1m[36mEnum Load (0.5ms)[0m  [1m[34mSELECT "enums".* FROM "enums" WHERE "enums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/enum_converts.rb:6:in `block (2 levels) in <main>'
+  [1m[36mEnum Load (0.6ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  [1m[36mCACHE Enum Load (0.0ms)[0m  [1m[34mSELECT "enums".* FROM "enums"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 355.4ms | Allocations: 94177)
+Completed 200 OK in 374ms (Views: 275.5ms | ActiveRecord: 91.9ms | Allocations: 97760)
+
+
+Started GET "/admin/countries" for 127.0.0.1 at 2020-12-29 14:34:27 +0300
+Processing by Admin::CountriesController#index as HTML
+  [1m[36mAdminUser Load (0.5ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "countries"[0m
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "countries" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries" ORDER BY "countries"."id" desc LIMIT $1 OFFSET $2[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems" WHERE "systems"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/admin/countries.rb:4:in `block (2 levels) in <main>'
+  [1m[36mSystem Load (0.5ms)[0m  [1m[34mSELECT "systems".* FROM "systems"[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 248.9ms | Allocations: 98345)
+Completed 200 OK in 263ms (Views: 241.8ms | ActiveRecord: 14.0ms | Allocations: 101335)
+
+
+Started GET "/admin/comments" for 127.0.0.1 at 2020-12-29 14:34:28 +0300
+Processing by Admin::CommentsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1[0m  [["namespace", "admin"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" WHERE "active_admin_comments"."namespace" = $1 LIMIT $2 OFFSET $3) subquery_for_count[0m  [["namespace", "admin"], ["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 223.9ms | Allocations: 80919)
+Completed 200 OK in 231ms (Views: 222.8ms | ActiveRecord: 3.0ms | Allocations: 83441)
+
+
+Started GET "/admin/act_adm_comments" for 127.0.0.1 at 2020-12-29 14:34:31 +0300
+Processing by Admin::ActAdmCommentsController#index as HTML
+  [1m[36mAdminUser Load (0.4ms)[0m  [1m[34mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = $1 ORDER BY "admin_users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "active_admin_comments" LIMIT $1 OFFSET $2) subquery_for_count[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."resource_type" FROM "active_admin_comments" ORDER BY resource_type asc[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DISTINCT "active_admin_comments"."author_type" FROM "active_admin_comments" ORDER BY author_type asc[0m
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/activeadmin-2.9.0/app/views/active_admin/resource/index.html.arb (Duration: 209.7ms | Allocations: 79082)
+Completed 200 OK in 217ms (Views: 209.7ms | ActiveRecord: 2.4ms | Allocations: 81573)
+
+
