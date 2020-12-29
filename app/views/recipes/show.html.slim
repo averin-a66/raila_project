@@ -3,7 +3,7 @@
 - if @country_name != 'Россия'
   - @translate_rec =YTrans::translate_text @recipe.name, 'ru', 'en'
 - else
-  - @recipe_user = Country.find(@recipe.user_id).id
+  - @recipe_user = User.find(@recipe.user_id).country_id
   - if current_user.country_id!=@recipe_user
     - @translate_rec =YTrans::translate_text @recipe.name, 'en', 'ru'
 h2
@@ -26,7 +26,7 @@ table
       - @translate_ingredient =YTrans::translate_text i.name_in, 'ru', 'en'
       - @translate_enum =YTrans::translate_text enum_name, 'ru', 'en'
     - else
-      - @recipe_user = Country.find(@recipe.user_id).id
+      - @recipe_user = User.find(@recipe.user_id).country_id
       - if current_user.country_id!=@recipe_user
         - @translate_ingredient =YTrans::translate_text i.name_in, 'en', 'ru'
         - @translate_enum =YTrans::translate_text enum_name, 'en', 'ru'
@@ -46,7 +46,7 @@ hr
     -@translate_del= YTrans::translate_text 'Удалить', 'ru', 'en'
     -@translate_otmena= YTrans::translate_text 'Отмена', 'ru', 'en'
   - else
-    - @recipe_user = Country.find(@recipe.user_id).id
+    - @recipe_user = User.find(@recipe.user_id).country_id
     - if current_user.country_id!= @recipe_user
       - @translate_body =YTrans::translate_text @recipe.body, 'en', 'ru'
 p = @translate_body
@@ -66,8 +66,6 @@ h2
   - if @country_name != 'Россия'
     - @translate_comment =YTrans::translate_text comment.body, 'ru', 'en'
   - else
-     - @recipe_user = Country.find(@recipe.user_id).id
-      - if current_user.country_id!=@recipe_user
         - @translate_comment =YTrans::translate_text comment.body, 'en', 'ru'
   p
     strong  User:

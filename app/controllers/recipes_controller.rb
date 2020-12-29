@@ -22,17 +22,20 @@ class YTrans
         'sourceLanguageCode' => lang_source,
         'texts' => [text]
     }.to_json
+    begin
+      uri = URI.parse('https://translate.api.cloud.yandex.net/translate/v2/translate')
+      https = Net::HTTP.new(uri.host,uri.port)
+      https.use_ssl = true
+      req = Net::HTTP::Post.new(uri, initheader = {'Content-Type' =>'application/json'})
+      req['Authorization']='Bearer '+get_iamToken
 
-    uri = URI.parse('https://translate.api.cloud.yandex.net/translate/v2/translate')
-    https = Net::HTTP.new(uri.host,uri.port)
-    https.use_ssl = true
-    req = Net::HTTP::Post.new(uri, initheader = {'Content-Type' =>'application/json'})
-    req['Authorization']='Bearer '+get_iamToken
-
-    req.body = @toSend
-    res = https.request(req)
-    res_json = JSON.parse(res.body)
-    return res_json['translations'][0]['text']
+      req.body = @toSend
+       res = https.request(req)
+       res_json = JSON.parse(res.body)
+       return res_json['translations'][0]['text']
+    rescue
+      return ''
+    end
   end
 
 end

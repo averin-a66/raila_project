@@ -11,10 +11,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78880402-955c-4c5c-9836-363618abd382" name="Default Changelist" comment="Ver2712">
+      <change beforePath="$PROJECT_DIR$/.idea/hello.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hello.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/recipes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/recipes_controller.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/pages/about.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/pages/about.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/edit.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/recipes/new.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/new.html.slim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/recipes/show.html.slim" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/recipes/show.html.slim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/initializers/assets.rb" beforeDir="false" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/1H/1HyneLliGLAocm4KVeWzj5tKGWdomYfz7rWloxQlXRc.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/assets/sprockets/v4.0.0/8J/8JOedZF9m0P656fHle8DWmmJffxhiciEo-B9Ta6NyG8.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/22/34329041bbfe15" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/22/34329041bbfe15" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/58/47665ff9f7d425" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/58/47665ff9f7d425" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/pids/server.pid" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/pids/server.pid" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,16 +105,19 @@
       <command value="rails g active_admin:resource ingr" />
       <command value="yarn add bootstrap@4.3.1 jquery popper.js" />
       <command value="rails g start_bot.rb" />
-      <command value="bundle install" />
       <command value="rails g migration change_countries" />
       <command value="rails test test/models/comment_test.rb:4" />
       <command value="rails g migration create_subscribers" />
       <command value="rails generate job notify_subscribers" />
       <command value="rails g controller systems" />
       <command value="rails g controller pages" />
+      <command value="bundle install" />
+      <command value="rails g migration rename_subscribers_to_subscriptions" />
+      <command value="rails g model  subscribes chat_name: string" />
+      <command value="rails g migration rename_subscribe_to_subscription" />
     </option>
   </component>
-  <component name="RunManager" selected="Rake.db:migrate (4)">
+  <component name="RunManager" selected="Rake.db:migrate (3)">
     <configuration name="Development: hello" type="RailsRunConfigurationType" factoryName="Rails">
       <module name="hello" />
       <predefined_log_file enabled="true" id="RUBY_RAILS_SERVER" />
@@ -195,7 +215,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="db:migrate (4)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+    <configuration name="db:migrate (5)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="hello" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
@@ -214,7 +234,7 @@
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RAKE_TASK_OPTION_TESTOPTS" VALUE="" />
       <method v="2" />
     </configuration>
-    <configuration name="db:migrate (5)" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
+    <configuration name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
       <module name="hello" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
@@ -276,11 +296,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Rake.db:migrate (4)" />
         <item itemvalue="Rake.db:migrate (3)" />
         <item itemvalue="Rake.db:migrate (2)" />
         <item itemvalue="Rake.db:migrate (5)" />
         <item itemvalue="Rake.db:migrate (1)" />
+        <item itemvalue="Rake.db:migrate" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +318,7 @@
       <workItem from="1607624512048" duration="51130000" />
       <workItem from="1608303127243" duration="52097000" />
       <workItem from="1608629474760" duration="9622000" />
-      <workItem from="1608722004045" duration="19194000" />
+      <workItem from="1608722004045" duration="28207000" />
     </task>
     <task id="LOCAL-00001" summary="before Users">
       <created>1607104108162</created>
@@ -363,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609100990055</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Ver2712">
+      <created>1609101540131</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1609101540131</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,22 +421,22 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="417" y="122" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.740@0.0.1366.740" timestamp="1608836598234" />
-    <state width="1324" height="197" key="GridCell.Tab.0.bottom" timestamp="1608831516425">
+    <state width="1324" height="197" key="GridCell.Tab.0.bottom" timestamp="1609236095864">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
-    <state width="1324" height="197" key="GridCell.Tab.0.center" timestamp="1608831516425">
+    <state width="1324" height="197" key="GridCell.Tab.0.bottom/0.0.1366.740@0.0.1366.740" timestamp="1609236095864" />
+    <state width="1324" height="197" key="GridCell.Tab.0.center" timestamp="1609236095864">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
-    <state width="1324" height="197" key="GridCell.Tab.0.left" timestamp="1608831516425">
+    <state width="1324" height="197" key="GridCell.Tab.0.center/0.0.1366.740@0.0.1366.740" timestamp="1609236095864" />
+    <state width="1324" height="197" key="GridCell.Tab.0.left" timestamp="1609236095864">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
-    <state width="1324" height="197" key="GridCell.Tab.0.right" timestamp="1608831516425">
+    <state width="1324" height="197" key="GridCell.Tab.0.left/0.0.1366.740@0.0.1366.740" timestamp="1609236095864" />
+    <state width="1324" height="197" key="GridCell.Tab.0.right" timestamp="1609236095864">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state width="1324" height="197" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1608831516425" />
+    <state width="1324" height="197" key="GridCell.Tab.0.right/0.0.1366.740@0.0.1366.740" timestamp="1609236095864" />
     <state width="1324" height="224" key="GridCell.Tab.1.bottom" timestamp="1607623959410">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
@@ -450,19 +477,19 @@
       <screen x="0" y="0" width="1366" height="740" />
     </state>
     <state x="396" y="0" width="574" height="740" key="find.popup/0.0.1366.740@0.0.1366.740" timestamp="1608582822199" />
-    <state x="343" y="163" width="672" height="677" key="run.anything.popup" timestamp="1608836919847">
+    <state x="343" y="163" width="672" height="677" key="run.anything.popup" timestamp="1609155425985">
       <screen x="0" y="0" width="1366" height="740" />
     </state>
-    <state x="343" y="163" width="672" height="677" key="run.anything.popup/0.0.1366.740@0.0.1366.740" timestamp="1608836919847" />
+    <state x="343" y="163" width="672" height="677" key="run.anything.popup/0.0.1366.740@0.0.1366.740" timestamp="1609155425985" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/hello@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1608555334341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
-    <SUITE FILE_PATH="coverage/hello@db_migrate__1_.rcov" NAME="db:migrate (1) Coverage Results" MODIFIED="1608555485289" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@db_migrate__4_.rcov" NAME="db:migrate (4) Coverage Results" MODIFIED="1608643554823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate.rcov" NAME="db:migrate Coverage Results" MODIFIED="1609154947500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__1_.rcov" NAME="db:migrate (1) Coverage Results" MODIFIED="1609155231915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@Development__hello.rcov" NAME="Development: hello Coverage Results" MODIFIED="1606482311430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
-    <SUITE FILE_PATH="coverage/hello@db_migrate__3_.rcov" NAME="db:migrate (3) Coverage Results" MODIFIED="1608636514000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
-    <SUITE FILE_PATH="coverage/hello@db_migrate__5_.rcov" NAME="db:migrate (5) Coverage Results" MODIFIED="1608555812324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
-    <SUITE FILE_PATH="coverage/hello@db_migrate__2_.rcov" NAME="db:migrate (2) Coverage Results" MODIFIED="1608573933097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__3_.rcov" NAME="db:migrate (3) Coverage Results" MODIFIED="1609236093821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__5_.rcov" NAME="db:migrate (5) Coverage Results" MODIFIED="1609155290491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
+    <SUITE FILE_PATH="coverage/hello@db_migrate__2_.rcov" NAME="db:migrate (2) Coverage Results" MODIFIED="1609155464063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
     <SUITE FILE_PATH="coverage/hello@Rails_console__hello.rcov" NAME="Rails console: hello Coverage Results" MODIFIED="1608404501871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="hello" />
   </component>
 </project>

@@ -50,7 +50,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'omniauth'
-
+gem "bootstrap_form", ">= 4.0"
 gem 'activeadmin'
 gem 'formtastic'
 gem "font-awesome-rails"

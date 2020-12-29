@@ -15,7 +15,7 @@
 
     = render 'edit_new'
     p
-    = f.submit(@translate_submit, {:class => 'btn btn-warning'})
+    = f.submit(@translate_submit, :class => 'btn btn-warning')
     = link_to @translate_otmena, recipes_path
   table
     - @recipe.ingrs.each do |i|
@@ -59,6 +59,6 @@
         - else
           = form.collection_select(:enum_id, Enum.where("system_id = ? or system_id=?", system_id, 3), :id, :name, prompt: false)
    p
-    = form.submit(@translate_add)
+    = form.submit(@translate_add, :class => "btn btn-outline-success")
 -else
   h3 Вы не можете редактировать эту страницу

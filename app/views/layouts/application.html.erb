@@ -6,12 +6,14 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag  'http://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
 
   </head>
 
   <body>
+  <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' %>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
       <h2 class="my-0 mr-md-auto font-weight-bold">Recipe_site</h2>
@@ -46,6 +48,7 @@
 
     </div>
     <div class="container">
+      <%= stylesheet_link_tag  'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' %>
       <%= yield %>
     </div>
   </body>

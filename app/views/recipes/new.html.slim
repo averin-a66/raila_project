@@ -16,6 +16,6 @@ h2 =@translate_add_recipe
   -@country_name=Country.find(current_user.country_id).state
   -if @country_name!='Россия'
     -@translate_add = YTrans::translate_text "Добавить ингредиент", 'ru', 'en'
-    -@translate_submit=YTrans::translate_text "Запомнить", 'ru', 'en'
-  = @f.submit(@translate_add)
-  p = f.submit(@translate_submit, {:class => 'btn btn-outline-success'})
+    -@translate_submit = YTrans::translate_text "Запомнить", 'ru', 'en'
+  = @f.submit @translate_add, class: "btn btn-outline-success"
+  p = f.submit(@translate_submit, {:class => "btn btn-outline-success"})
