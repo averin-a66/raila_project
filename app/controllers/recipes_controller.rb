@@ -5,7 +5,7 @@ require 'json'
 
 class YTrans
   OAUTH_TOKEN = "AgAAAAADRRzMAATuwTh3HaSDGkFrh8r1t3MPAv0";
-  FOLDER_ID = "b1grl2f0omsgn1skpdd8";
+  FOLDER_ID = "b1gknc2fgg7q0q8j5871";
 
   def self.get_iamToken
     uri = URI('https://iam.api.cloud.yandex.net/iam/v1/tokens')
